@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPSI.SQL</name>
+    </assembly>
+    <members>
+        <member name="T:OPSI.SQL.SQLTest">
+            <summary>
+            Class used to test a SQL Connection.
+            </summary>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.TestSQLConnection(System.String,System.String,System.String,System.String)">
+            <summary>
+            Test a SQL connection.
+            </summary>
+            <param name="server"></param>
+            <param name="database"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns>True, if connection is successful. Exception otherwise.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.TestSQLConnection(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Test a SQL connection.
+            </summary>
+            <param name="server"></param>
+            <param name="database"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="useWindowsAuthentication"></param>
+            <returns>True, if connection is successful. Exception otherwise.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.TestSQLConnection(System.String)">
+            <summary>
+            Test a SQL connection. 
+            </summary>
+            <param name="ConnectionString">A SQL Connection string.</param>
+            <returns>True, if connection is successful. Exception otherwise.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.TestSQLConnection(System.Data.SqlClient.SqlConnection)">
+            <summary>
+            Test a SQL connection. 
+            </summary>
+            <param name="Connection">A SQL Connection.</param>
+            <returns>True, if connection is successful. Exception otherwise.</returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.CreateConnectionString(System.String,System.String,System.String,System.String)">
+            <summary>
+            Create and return a connection string.
+            </summary>
+            <param name="server"></param>
+            <param name="database"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns>The connection string.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.CreateConnectionString(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Create and return a connection string.
+            </summary>
+            <param name="server"></param>
+            <param name="database"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="useWindowsAuthentication"></param>
+            <returns>The connection string.</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.ValidateServerAndDatabase(System.String,System.String)">
+            <summary>
+            Validate the server and database.
+            </summary>
+            <param name="server"></param>
+            <param name="database"></param>
+        </member>
+        <member name="M:OPSI.SQL.SQLTest.CreateConnectionStringFromParameters(System.String,System.String,System.String,System.String)">
+            <summary>
+            Create the connection string, using some clever logic.
+            </summary>
+            <param name="server"></param>
+            <param name="database"></param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

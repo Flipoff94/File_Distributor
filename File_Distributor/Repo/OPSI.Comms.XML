@@ -1,0 +1,730 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPSI.Comms</name>
+    </assembly>
+    <members>
+        <member name="T:OPSI.Comms.InitialiseSubSonicConfiguration">
+            <summary>
+            Configure SubSonic in code, without using an App.config.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.InitialiseSubSonicConfiguration.ConfigureSubSonicProvidersInCode(System.String,System.String,System.String)">
+            <summary>
+            Configure a SubSonic Provider in Code.
+            </summary>
+            <param name="providerName">The Provider name</param>
+            <param name="connectionStringName">The connection String name.</param>
+            <param name="connectionString">The actual connection string.</param>
+        </member>
+        <member name="M:OPSI.Comms.InitialiseSubSonicConfiguration.CreateSQLConnectionString(System.String,System.String,System.String,System.String)">
+            <summary>
+            Create and return a connection string.
+            If the database or server is blank or null, an exception is thrown.
+            </summary>
+            <param name="server">The server name.</param>
+            <param name="database">The database name.</param>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <returns>The connection string.</returns>
+        </member>
+        <member name="T:OPSI.Comms.Events.ReportProgressEventHandler">
+            <summary>
+            Report Progress declaration.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:OPSI.Comms.Events.ProgressEventArgs">
+            <summary>
+            Event arguments used for the the Report Progress event.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Events.ProgressEventArgs.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="Current">The Current Progress.</param>
+            <param name="Max">The Maximum Progress</param>
+        </member>
+        <member name="M:OPSI.Comms.Events.ProgressEventArgs.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="CurrentTask">The Current Task name.</param>
+            <param name="Current">The Current Progress.</param>
+            <param name="Max">The Maximum Progress</param>
+        </member>
+        <member name="P:OPSI.Comms.Events.ProgressEventArgs.CurrentProgress">
+            <summary>
+            The Progress of the current task.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Events.ProgressEventArgs.MaxProgress">
+            <summary>
+            The Maximum progress of the current task.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Events.ProgressEventArgs.Taskname">
+            <summary>
+            The current task name.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Events.ProgressEventArgs.Percentage">
+            <summary>
+            The Progress Percentage.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Export.ServerToClientComparer">
+            <summary>
+            Class used to compare to ServerToClient Objects.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Export.ServerToClientComparer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Export.ServerToClientComparer.Compare(OPSI.Comms.Export.ServerToClient,OPSI.Comms.Export.ServerToClient)">
+            <summary>
+            Compare two ServerToClient objects.
+            </summary>
+            <param name="x">The first object.</param>
+            <param name="y">The second object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPSI.Comms.Export.ServerToClientComparer.CompareTo(System.Int32,System.Int32,OPSI.Comms.Export.ServerToClientComparer.SortOrder)">
+            <summary>
+            Compare two ints.
+            </summary>
+            <param name="X">The first int</param>
+            <param name="Y">The second int</param>
+            <param name="sortOrder">The sortOrder</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPSI.Comms.Export.ServerToClientComparer.CompareTo(System.Nullable{System.DateTime},System.Nullable{System.DateTime},OPSI.Comms.Export.ServerToClientComparer.SortOrder)">
+            <summary>
+            Compares two datetimes.
+            </summary>
+            <param name="X">The first datetime.</param>
+            <param name="Y">The second datetime.</param>
+            <param name="sortOrder">The sortOrder</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClientComparer.ComparisonMethod">
+            <summary>
+            The Comparison method to use.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Export.ServerToClientComparer.ComparisonType">
+            <summary>
+            The Type of Comparison to use.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.ServerToClientComparer.ComparisonType.DecesendingID">
+            <summary>
+            Sort by largest to smallest.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.ServerToClientComparer.ComparisonType.AscendingID">
+            <summary>
+            Sort by smallest to largest.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.ServerToClientComparer.ComparisonType.DecesendingUpdatedDateTime">
+            <summary>
+            Sort by newest to oldest.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.ServerToClientComparer.ComparisonType.AscendingUpdatedDateTime">
+            <summary>
+            Sort by oldest to newest.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Export.ServerToClientComparer.SortOrder">
+            <summary>
+            The sort order required.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.ServerToClientComparer.SortOrder.Decesending">
+            <summary>
+            From highest/newest to lowest/latest.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.ServerToClientComparer.SortOrder.Ascending">
+            <summary>
+            From lowest/latest to highest/newest.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Import.ClientToServer">
+            <summary>
+            Class to model Comms import object.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Import.ClientToServer.FindAllCommsImportsByMessageType(System.String)">
+            <summary>
+            Find all Comms import records with this message type. 
+            </summary>
+            <param name="MessageType">The Message Type.</param>
+            <returns>A match if it is found, otherwise null.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Import.ClientToServer.#ctor(System.Int32)">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.ClientToServerID">
+            <summary>
+            Unique id field.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.Outbound">
+            <summary>
+            Plato import xml.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.Response">
+            <summary>
+            Response Plato will see.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.Status">
+            <summary>
+            The Message status.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.UpdatedOn">
+            <summary>
+            The Date and time the messages was last updated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.ExternalDatabaseID">
+            <summary>
+            The external database ID, to identify the external system.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.ClientToServer.MessageType">
+            <summary>
+            The type of message.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.ResponseCheck.CommsImportCheck">
+            <summary>
+            Class used to check the responses to a Comms import.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.ResponseCheck.CommsImportCheck.logger">
+            <summary>
+            NLog Logger.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.ResponseCheck.CommsImportCheck.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.ResponseCheck.CommsImportCheck.CheckAllImportResponses">
+            <summary>
+            Check all import reponses in the client to server table.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Export.CommsExport">
+            <summary>
+            Class to handle exporting XML from the Comms database.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.#ctor(System.String)">
+            <summary>
+            Constructor. 
+            No error checking is performed on the connection string.
+            </summary>
+            <param name="connectionString">The New Connection String.</param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor.
+            Creates and sets the connection string on the fly.
+            If username and password are blank, integrated security is used.
+            If there is an error with the connection string, an exception is thrown.
+            </summary>
+            <param name="server">The server name</param>
+            <param name="database">The database name</param>
+            <param name="username">Username</param>
+            <param name="password">Password</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.ResetExportData">
+            <summary>
+            Reset the all export data that was imported into the program,
+            but failed to be exported out.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.ResetExportData(System.Int32)">
+            <summary>
+            Reset the export data that was imported into the program,
+            but failed to be exported out,
+            based on the ID.
+            </summary>
+            <param name="serverToClientID"></param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.ResetExportData(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Reset the export data that was imported into the program,
+            but failed to be exported out,
+            based on the IDs.
+            </summary>
+            <param name="ServerToClientIDs"></param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.GetLatestExportData(System.String)">
+            <summary>
+            Get the first Export from the Comms database.
+            </summary>
+            <param name="ExtID">The external database ID. Must match what is set in Plato.</param>
+            <returns>The first export that has not been processed.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.GetAllExportData(System.String)">
+            <summary>
+            Get all export xml data from the Comms database.
+            </summary>
+            <param name="ExtID">The external database ID.  Must match what is set in Plato.</param>
+            <returns>A List of all the Xml exports that have not been processed.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.GetLatestExportData(System.String,System.String)">
+            <summary>
+            Get the first Export from the Comms database.
+            </summary>
+            <param name="ExtID">The external database ID. Must match what is set in Plato.</param>
+            <returns>The first export that has not been processed.</returns>
+            <param name="MessageType">The message type to look for.</param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.GetAllExportData(System.String,System.String)">
+            <summary>
+            Get all export xml data from the Comms database.
+            </summary>
+            <param name="ExtID">The external database ID.  Must match what is set in Plato.</param>
+            <returns>A List of all the Xml exports that have not been processed.</returns>
+            <param name="MessageType">The message type to look for.</param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.SendReponse(OPSI.Comms.Export.ServerToClient)">
+            <summary>
+            Send a single response to the export table of the Comms database.
+            </summary>
+            <param name="commsDBExport"></param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.SendResponses(System.Collections.Generic.List{OPSI.Comms.Export.ServerToClient})">
+            <summary>
+            Send a list of response to the export table of the comms database.
+            </summary>
+            <param name="commsDBExports"></param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.UpdateExports(System.Collections.Generic.List{System.Int32},OPSI.Comms.CommsStatusCodes)">
+            <summary>
+            Update a list of records with these IDs directly.
+            This method does not send a reponse for the export record, only changes the status 
+            and the updated time.
+            </summary>
+            <param name="serverToClientIDs">The List of server to client IDs.</param>
+            <param name="newStatus">The status to update the records with.</param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.UpdateExports(System.Int32,OPSI.Comms.CommsStatusCodes)">
+            <summary>
+            Update a record with this ID directly.
+            This method does not send a reponse for the export record, only changes the status 
+            and the updated time.
+            </summary>
+            <param name="serverToClientID">The server to client ID.</param>
+            <param name="newStatus">The status to update the record with.</param>
+        </member>
+        <member name="F:OPSI.Comms.Export.CommsExport.logger">
+            <summary>
+            NLog Logger.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.CommsExport.connectionString">
+            <summary>
+            The connection string for this object.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.CommsExport.useLogging">
+            <summary>
+            True to use logging.
+            Default is false.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Export.CommsExport.commsExports">
+            <summary>
+            The exports from the Comms database.
+            The exports must be sorted newest to oldest.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.UpdateRecordsWithStatusInBatches(System.Collections.Generic.List{System.Int32},OPSI.Comms.CommsStatusCodes)">
+            <summary>
+            Update a list of records with a status change.
+            Return the number of affected rows.
+            </summary>
+            <param name="serverToClientIDs">The List of server to client IDs.</param>
+            <param name="statusToUpdate">The status to update the records with.</param>
+            <returns>The number of affected rows.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.UpdateCommsDB(System.Collections.Generic.List{OPSI.Comms.Export.ServerToClient})">
+            <summary>
+            Update the Export table in Comms database with new Xml Responses.
+            </summary>
+            <param name="NewCommsExports"></param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.GetExportMessages(System.String,System.String)">
+            <summary>
+            Extract the exports from the Comms database
+            The exports must be returned newest to oldest.
+            </summary>
+            <param name="ExtID">The database ID to look for.</param>
+            <param name="MessageType">The message type to look for.</param>
+        </member>
+        <member name="M:OPSI.Comms.Export.CommsExport.TryReportProgress(System.String,System.Int32,System.Int32)">
+            <summary>
+            Try reporting progress from this export object.
+            </summary>
+            <param name="Taskname"></param>
+            <param name="Current"></param>
+            <param name="Max"></param>
+        </member>
+        <member name="P:OPSI.Comms.Export.CommsExport.CommsExports">
+            <summary>
+            The exports from the Comms database.
+            The exports must be sorted newest to oldest.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.CommsExport.ConnectionString">
+            <summary>
+            The Connection String used by this object.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.CommsExport.UseLogging">
+            <summary>
+            True to use logging.
+            Default is false.
+            </summary>
+        </member>
+        <member name="E:OPSI.Comms.Export.CommsExport.ReportProgress">
+            <summary>
+            Event used to report progress.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Import.CommsImport">
+            <summary>
+            Class to handle importing Xml into the Comms database.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.#ctor(System.String)">
+            <summary>
+            Constructor. 
+            No error checking is performed on the connection string.
+            </summary>
+            <param name="ConnectionString">The Connection String.</param>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor.
+            Creates and sets the connection string on the fly.
+            If username and password are blank, integrated security is used.
+            If there is an error with the connection string, an exception is thrown.
+            </summary>
+            <param name="server">The server name</param>
+            <param name="database">The database name</param>
+            <param name="username">Username</param>
+            <param name="password">Password</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.ImportObjects(System.Object[],System.String,System.String,System.Boolean)">
+            <summary>
+            Import OPSI master data object lists into the Comms database.
+            </summary>
+            <param name="Data">An object array of lists. Each list must be of a type <see cref="!:OPSI.Data.Plato.Objects"/></param>
+            <param name="MsgType">The type of message this import is. (Must be less than 100 chars.)</param>
+            <param name="ExtID">The exteral ID that Plato must look for when importing this data.</param>
+            <returns>A List of the imported records.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.ImportObject(System.Object,System.String,System.String,System.Boolean)">
+            <summary>
+            Import an OPSI master data object list into the Comms database.
+            </summary>
+            <param name="Data">A list of a type <see cref="!:OPSI.Data.Plato.Objects"/>. The list is cast as an object.</param>
+            <param name="MsgType">The type of message this import is. (Must be less than 100 chars.)</param>
+            <param name="ExtID">The exteral ID that Plato must look for when importing this data.</param>
+            <returns>A List of the imported records.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.ImportXmlData(System.String,System.String,System.String)">
+            <summary>
+            Import xml data into the Comms database.
+            </summary>
+            <param name="XmlString">The Xml data to import. (Must be less than the 8000 chars.)</param>
+            <param name="MsgType">The type of message this import is. (Must be less than 100 chars.)</param>
+            <param name="ExtID">The exteral ID that Plato must look for when importing this data.</param>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.InvalidateImport(System.String)">
+            <summary>
+            Invalidate any import messages in the Comms database that have not been imported in Plato.
+            Used if an exception occurs and you wish to not import messages.
+            </summary>
+            <param name="ExtID">The exteral ID that Plato must look for when importing this data.</param>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.GetAllImportsWithResponses">
+            <summary>
+            Get all records from the Comms import table that have a status indicating a response.
+            </summary>
+            <returns>The List of CommsImports.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.UpdateImportsWithResponsesAsProcessed(System.Collections.Generic.List{OPSI.Comms.Import.ClientToServer})">
+            <summary>
+            Update a list of CommsImports as having been processed for responses.
+            </summary>
+            <param name="CommsImports">The List of CommsImports.</param>
+        </member>
+        <member name="F:OPSI.Comms.Import.CommsImport.logger">
+            <summary>
+            NLog Logger.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Import.CommsImport.connectionString">
+            <summary>
+            The Connection String used by this object.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Import.CommsImport.batchLimit">
+            <summary>
+            The number of single <see cref="!:OPSI.Data.Plato.Objects"/> in a batch.
+            Default is 500.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Import.CommsImport.useBatching">
+            <summary>
+            True if batching is to be used for importing data. 
+            Default is true.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.Import.CommsImport.useLogging">
+            <summary>
+            True to use logging.
+            Default is false.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.ImportXmlDataIntoCommsDB(System.String,System.String,System.String)">
+            <summary>
+            Import raw Xml data into the Comms database.
+            </summary>
+            <param name="XmlString">The Xml data to import. (Must be less than the 8000 chars.)</param>
+            <param name="MsgType">The type of message this import is. (Must be less than 100 chars.)</param>
+            <param name="ExtID">The exteral ID that Plato must look for when importing this data.</param>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.ImportListOfXmlData(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            Import a list of XmlData Strings into the Comms DB.
+            </summary>
+            <param name="XmlData">The List of XML data strings.</param>
+            <param name="MsgType">The Message type.</param>
+            <param name="ExtID">The Plato External DB ID.</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.InsertClientToServerRecordIntoCommsDB(System.String,System.String,System.String)">
+            <summary>
+            Insert a new record into the Comms DB.
+            </summary>
+            <param name="Outbound">The Outbound String</param>
+            <param name="MsgType">The Message Type</param>
+            <param name="ExtDBID">The External DB ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:OPSI.Comms.Import.CommsImport.TryReportProgress(System.String,System.Int32,System.Int32)">
+            <summary>
+            Try reporting progress from this import object.
+            </summary>
+            <param name="Taskname"></param>
+            <param name="Current"></param>
+            <param name="Max"></param>
+        </member>
+        <member name="P:OPSI.Comms.Import.CommsImport.BatchLimit">
+            <summary>
+            The number of single <see cref="!:OPSI.Data.Plato.Objects"/> in a batch.
+            Default is 500.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.CommsImport.UseBatching">
+            <summary>
+            True if batching is to be used for importing data. 
+            Default is true.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.CommsImport.ConnectionString">
+            <summary>
+            The Connection String used by this object.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Import.CommsImport.UseLogging">
+            <summary>
+            True to use logging.
+            Default is false.
+            </summary>
+        </member>
+        <member name="E:OPSI.Comms.Import.CommsImport.ReportProgress">
+            <summary>
+            Event used to report progress.
+            </summary>
+        </member>
+        <member name="T:Comms.ClienttoserverCollection">
+             <summary>
+             Strongly-typed collection for the Clienttoserver class.
+             </summary>
+            ssss
+        </member>
+        <member name="T:Comms.Clienttoserver">
+            <summary>
+            This is an ActiveRecord class which wraps the CLIENTTOSERVER table.
+            </summary>
+        </member>
+        <member name="M:Comms.Clienttoserver.Insert(System.String,System.String,System.Int32,System.DateTime,System.String,System.String)">
+            <summary>
+            Inserts a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="M:Comms.Clienttoserver.Update(System.Int32,System.String,System.String,System.Int32,System.DateTime,System.String,System.String)">
+            <summary>
+            Updates a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="T:Comms.ClienttoserverController">
+            <summary>
+            Controller class for CLIENTTOSERVER
+            </summary>
+        </member>
+        <member name="M:Comms.ClienttoserverController.Insert(System.String,System.String,System.Int32,System.DateTime,System.String,System.String)">
+            <summary>
+            Inserts a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="M:Comms.ClienttoserverController.Update(System.Int32,System.String,System.String,System.Int32,System.DateTime,System.String,System.String)">
+            <summary>
+            Updates a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="T:Comms.ServertoclientCollection">
+             <summary>
+             Strongly-typed collection for the Servertoclient class.
+             </summary>
+            ssss
+        </member>
+        <member name="T:Comms.Servertoclient">
+            <summary>
+            This is an ActiveRecord class which wraps the SERVERTOCLIENT table.
+            </summary>
+        </member>
+        <member name="M:Comms.Servertoclient.Insert(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            Inserts a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="M:Comms.Servertoclient.Update(System.Int32,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            Updates a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="T:Comms.ServertoclientController">
+            <summary>
+            Controller class for SERVERTOCLIENT
+            </summary>
+        </member>
+        <member name="M:Comms.ServertoclientController.Insert(System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            Inserts a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="M:Comms.ServertoclientController.Update(System.Int32,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            Updates a record, can be used with the Object Data Source
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.Export.ServerToClient">
+            <summary>
+            Class to model Comms export object.
+            </summary>
+        </member>
+        <member name="M:OPSI.Comms.Export.ServerToClient.FindAllCommsExportsByMessageType(System.String)">
+            <summary>
+            Find all Comms export records with this message type. 
+            </summary>
+            <param name="MessageType">The Message Type.</param>
+            <returns>A match if it is found, otherwise null.</returns>
+        </member>
+        <member name="M:OPSI.Comms.Export.ServerToClient.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ServerToClientID">The ID of this Object.</param>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.ServerToClientID">
+            <summary>
+            Unique id field.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.Inbound">
+            <summary>
+            Plato export xml.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.Response">
+            <summary>
+            Response Plato will see.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.Status">
+            <summary>
+            The Message status.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.UpdatedOn">
+            <summary>
+            The Date and time the messages was last updated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.ExternalDatabaseID">
+            <summary>
+            The external database ID, to identify the external system.
+            </summary>
+        </member>
+        <member name="P:OPSI.Comms.Export.ServerToClient.MessageType">
+            <summary>
+            The type of message.
+            </summary>
+        </member>
+        <member name="T:OPSI.Comms.CommsStatusCodes">
+            <summary>
+            The Status codes allowed for the Comms database.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.CommsStatusCodes.InvalidatedRecord">
+            <summary>
+            A record has been invalidated.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.CommsStatusCodes.NewRecord">
+            <summary>
+            A new Record has been created.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.CommsStatusCodes.ReceiverIsProcessingRecord">
+            <summary>
+            Receiver is currently processing this record.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.CommsStatusCodes.ReceiverHasProcessedRecord">
+            <summary>
+            Receiver has finished processing the record.
+            </summary>
+        </member>
+        <member name="F:OPSI.Comms.CommsStatusCodes.SenderHasProcessedResponse">
+            <summary>
+            Sender has processed the response.
+            </summary>
+        </member>
+    </members>
+</doc>

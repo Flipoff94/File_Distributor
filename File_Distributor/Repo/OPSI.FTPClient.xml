@@ -1,0 +1,581 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPSI.FTPClient</name>
+    </assembly>
+    <members>
+        <member name="T:OPSI.FTP.ReportProgressEventHandler">
+            <summary>
+            Event handler used to report progress out of an FTP object.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:OPSI.FTP.FTPClientProgressEventArgs">
+            <summary>
+            Class used to hold FTP client progress information.
+            </summary>
+        </member>
+        <member name="M:OPSI.FTP.FTPClientProgressEventArgs.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="current">The current file number.</param>
+            <param name="total">The total number of files.</param>
+        </member>
+        <member name="M:OPSI.FTP.FTPClientProgressEventArgs.#ctor(OPSI.FTP.FTPAction,System.Int32,System.Int32)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="action">The Action being performed.</param>
+            <param name="current">The current file number.</param>
+            <param name="total">The total number of files.</param>
+        </member>
+        <member name="M:OPSI.FTP.FTPClientProgressEventArgs.#ctor(OPSI.FTP.FTPAction,System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructor 
+            </summary>
+            <param name="action">The Action being performed.</param>
+            <param name="filename">the name of the file that is being actioned.</param>
+            <param name="current">The current file number.</param>
+            <param name="total">The total number of files.</param>
+        </member>
+        <member name="P:OPSI.FTP.FTPClientProgressEventArgs.CurrentAction">
+            <summary>
+            The Current action the FTP client is performing.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.FTPClientProgressEventArgs.CurrentFile">
+            <summary>
+            The current file the FTP client is uploading/downloading.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.FTPClientProgressEventArgs.TotalNumberOfFiles">
+            <summary>
+            The total number of files the FTP client is uploading/downloading.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.FTPClientProgressEventArgs.Filename">
+            <summary>
+            The name of the last file that was actioned.
+            </summary>
+        </member>
+        <member name="T:OPSI.FTP.OPSIFTPClient">
+            <summary>
+            FTP Client Class.
+            An FTP object can download and upload files to a remote FTP site.
+            </summary>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="useLogging">if set to <c>true</c> [use logging].</param>
+            <param name="deleteFilesAfterDownload">if set to <c>true</c> [delete files after download].</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="Site">The FTP site. If there is No ftp:// in the name, it will be added.</param>
+            <param name="Username">The username for the site.</param>
+            <param name="Password">The password for the site.</param>
+            <param name="useLogging">if set to <c>true</c> [use logging].</param>
+            <param name="deleteFilesAfterDownload">if set to <c>true</c> [delete files after download].</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="FullUri">The full URI of the ftp site.</param>
+            <param name="useLogging">if set to <c>true</c> [use logging].</param>
+            <param name="deleteFilesAfterDownload">if set to <c>true</c> [delete files after download].</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.#ctor(System.Uri,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="FullUri">The full URI of the ftp site.</param>
+            <param name="useLogging">if set to <c>true</c> [use logging].</param>
+            <param name="deleteFilesAfterDownload">if set to <c>true</c> [delete files after download].</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.Init(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes the object.
+            </summary>
+            <param name="useLogging">if set to <c>true</c> [use logging].</param>
+            <param name="aDeleteFilesAfterDownload">if set to <c>true</c> [aggregate delete files after download].</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.TestConnection">
+            <summary>
+            Tests an FTP connection.
+            </summary>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.TestForFolderPath(System.String)">
+            <summary>
+            Test that a folder path exists on the FTP site.
+            </summary>
+            <param name="FolderPath">The path of the folder on the FTP site, without the site name.
+            If "" is used it tests if the root exists.</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.DownloadFiles(System.String,System.String)">
+            <summary>
+            Download all files from an FTP folder.
+            The successfully downloaded files are automatically deleted from the FTP site.
+            </summary>
+            <param name="FTPFolder">The FTP folder on the site, from where the files will be downloaded.
+            Use "" to get files from the root.</param>
+            <param name="LocalFolder">The local folder to save the files. It will be created if needed.</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.DownloadFiles(System.String,System.String,System.String,System.String)">
+            <summary>
+            Download files from an FTP folder, based on filename and extension.
+            The successfully downloaded files are automatically deleted from the FTP site.
+            </summary>
+            <param name="FTPFolder">The FTP folder on the site, from where the files will be downloaded.
+            Use "" to get files from the root.</param>
+            <param name="LocalFolder">The local folder to save the files.</param>
+            <param name="Filename">The filename to filter on. Use * to get all filenames.
+            If it is blank (""), then the patten is replaced by *.</param>
+            <param name="Extension">The extension of the file. Use * to get all extensions. 
+            If it is blank (""), then all files without extensions will be downloaded.</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String[],System.Boolean)">
+            <summary>
+            Uploads all files in Filenames to a FTPFolder folder
+            on the ftp server.
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to a subdirectory named "Uploaded on " + DateTime.Now.ToString("yyyy-MM-dd HH-mm tt").
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. 
+            Use "" to upload to the site root.</param>
+            <param name="Filenames">The files to be uploaded. If the filenames in Filenames are not full paths, 
+            they are assumed to be in the current working directory.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String,System.String[])">
+            <summary>
+            Uploads all files in Filenames to a FTPFolder folder
+            on the ftp server.
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to a subdirectory named "Uploaded on " + DateTime.Now.ToString("yyyy-MM-dd HH-mm tt").
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. 
+            Use "" to upload to the site root.</param>
+            <param name="Filenames">The files to be uploaded. If the filenames in Filenames are not full paths, 
+            they are assumed to be in the current working directory.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String[],System.String)">
+            <summary>
+            Uploads all files in Filenames to a FTPFolder folder
+            on the ftp server.
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to the specified success directory.
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. 
+            Use "" to upload to the site root.</param>
+            <param name="Filenames">The files to be uploaded. If the filenames in Filenames are not full paths, 
+            they are assumed to be in the current working directory.</param>
+            <param name="SuccessDirectory">A directory (must be absolute path) 
+            where the files are moved to after being successfully uploaded.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Uploads all files in LocalDirectory that match FilenameMatch and have extenstion Extension 
+            to the FTPFolder. 
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to the specified success directory.
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. Use "" to upload to the site root.</param>
+            <param name="LocalDirectory">The local directory (must be absolute path) where the files are stored currently.</param>
+            <param name="SuccessDirectory">A directory (must be absolute path) 
+            where the files are moved to after being successfully uploaded.</param>
+            <param name="FilenameMatch">The string to filter the files on. Use "*" to get all filenames.</param>
+            <param name="Extension">The file extension. Use "*" to get all extensions.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String,System.String,System.String)">
+            <summary>
+            Uploads all files in LocalDirectory that match FilenameMatch and have extenstion Extension 
+            to the FTPFolder. 
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to a subdirectory named "Uploaded on " + DateTime.Now.ToString("yyyy-MM-dd HH-mm tt").
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. Use "" to upload to the site root.</param>
+            <param name="LocalDirectory">The local directory (must be absolute path) where the files are stored currently.</param>
+            <param name="FilenameMatch">The string to filter the files on. Use "*" to get all filenames.</param>
+            <param name="Extension">The file extension. Use "*" to get all extensions.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String[],OPSI.FTP.UploadFileAction)">
+            <summary>
+            Uploads all files in Filenames to a FTPFolder folder
+            on the ftp server.
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to a subdirectory named "Uploaded on " + DateTime.Now.ToString("yyyy-MM-dd HH-mm tt").
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. 
+            Use "" to upload to the site root.</param>
+            <param name="Filenames">The files to be uploaded. If the filenames in Filenames are not full paths, 
+            they are assumed to be in the current working directory.</param>
+            <param name="Action">The action to be taken after the file is successfully uploaded.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String[],System.String,OPSI.FTP.UploadFileAction)">
+            <summary>
+            Uploads all files in Filenames to a FTPFolder folder
+            on the ftp server.
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to the specified success directory.
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. 
+            Use "" to upload to the site root.</param>
+            <param name="Filenames">The files to be uploaded. If the filenames in Filenames are not full paths, 
+            they are assumed to be in the current working directory.</param>
+            <param name="SuccessDirectory">A directory (must be absolute path)
+            where the files are moved to after being successfully uploaded.</param>
+            <param name="Action">The action to be taken after the file is successfully uploaded.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String,System.String,System.String,System.String,OPSI.FTP.UploadFileAction)">
+            <summary>
+            Uploads all files in LocalDirectory that match FilenameMatch and have extenstion Extension 
+            to the FTPFolder. 
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to the specified success directory.
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. Use "" to upload to the site root.</param>
+            <param name="LocalDirectory">The local directory (must be absolute path) where the files are stored currently.</param>
+            <param name="SuccessDirectory">A directory (must be absolute path) 
+            where the files are moved to after being successfully uploaded.</param>
+            <param name="FilenameMatch">The string to filter the files on. Use "*" to get all filenames.</param>
+            <param name="Extension">The file extension. Use "*" to get all extensions.</param>
+            <param name="Action">The action to be taken after the file is successfully uploaded.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFiles(System.String,System.String,System.String,System.String,OPSI.FTP.UploadFileAction)">
+            <summary>
+            Uploads all files in LocalDirectory that match FilenameMatch and have extenstion Extension 
+            to the FTPFolder. 
+            Checks to make sure that the file is uploaded successfully, and if so them moves the file 
+            to a subdirectory named "Uploaded on " + DateTime.Now.ToString("yyyy-MM-dd HH-mm tt").
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. Use "" to upload to the site root.</param>
+            <param name="LocalDirectory">The local directory (must be absolute path) where the files are stored currently.</param>
+            <param name="FilenameMatch">The string to filter the files on. Use "*" to get all filenames.</param>
+            <param name="Extension">The file extension. Use "*" to get all extensions.</param>
+            <param name="Action">The action to be taken after the file is successfully uploaded.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.ExtractFTPInfoFromUri">
+            <summary>
+            Extract site, username and password from the URI.
+            </summary>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.ConstructURI(System.String,System.String)">
+            <summary>
+            Builds a URI based on a folder structure and a filename.
+            </summary>
+            <param name="FTPFolder">The FTP folder. Can be blank if you wish to get the URI to
+            a file in the root directory.</param>
+            <param name="Filename">The filename with extension. Do not use "*".
+            Can be blank if you wish to get a URI to a folder not a file.</param>
+            <returns>The full URI to the file/folder.</returns>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.CheckFTPFileUpload(System.String,System.String)">
+            <summary>
+            Checks to see if a file has been successfully uploaded.
+            </summary>
+            <param name="FTPFolder">The FTP folder to check for the file.</param>
+            <param name="Filename">The name of the file.</param>
+            <exception cref="T:System.Exception"></exception>
+            <returns>True if the file is on the server. False otherwise. An exception is thrown if
+            an unexpected error occurs.</returns>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.logger">
+            <summary>
+            NLog variable.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.uploadCompletedAction">
+            <summary>
+            Action to be taken after a file is uploaded successfully.
+            Default is move to another directory.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.ftpUri">
+            <summary>
+            The full FTP URI.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.ftpSite">
+            <summary>
+            The FTP site name.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.ftpUsername">
+            <summary>
+            The FTP username.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.ftpPassword">
+            <summary>
+            The FTP password.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.suppressUploadExceptions">
+            <summary>
+            If true, any exceptions caused during an upload are swallowed.
+            If false, any exceptions caused during an upload are thrown.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.suppressDownloadExceptions">
+            <summary>
+            If true, any exceptions caused during a download are swallowed.
+            If false, any exceptions caused during a download are thrown.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.OPSIFTPClient.deleteFilesAfterDownload">
+            <summary>
+            If true, files are removed from the FTP site after downloading
+            </summary>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.DeleteFilesFromFTPSite(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Delete files from the FTP site.
+            </summary>
+            <param name="FTPFolder">The FTP folder to check for files.</param>
+            <exception cref="T:System.Exception"></exception>
+            <param name="Filenames">The names of the files to be deleted.</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.DeleteFileFromFTPSite(System.String,System.String)">
+            <summary>
+            Delete a single file from an FTP folder.
+            </summary>
+            <param name="FTPFolder">The FTP folder.</param>
+            <param name="Filename">The file to be deleted.</param>
+            <exception cref="T:System.Exception"></exception>
+            <returns>True if successfully deleted, false otherwise or an Exception is thrown.</returns>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.MoveFileToOldFolder(System.String,System.String)">
+            <summary>
+            Moves the file to the "old" folder, for archiving.
+            </summary>
+            <param name="ftpFolder">The FTP folder.</param>
+            <param name="filename">The filename.</param>
+            <exception cref="T:System.Exception">FTP error. Cannot delete file  + filename</exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.ReportProgressOfCurrentOperation(OPSI.FTP.FTPAction,System.Int32,System.Int32)">
+            <summary>
+            Report the file movement progress of the current operation.
+            </summary>
+            <param name="currentAction">The Current operation</param>
+            <param name="currentFileNum">The current file number.</param>
+            <param name="totalNumFiles">The total number of files.</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.ReportProgressOfCurrentOperation(OPSI.FTP.FTPAction,System.String,System.Int32,System.Int32)">
+            <summary>
+            Report the file movement progress of the current operation.
+            </summary>
+            <param name="currentAction">The Current operation</param>
+            <param name="filename">The Current filename</param>
+            <param name="currentFileNum">The current file number.</param>
+            <param name="totalNumFiles">The total number of files.</param>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.GetFilenames(System.String,System.String,System.String)">
+            <summary>
+            Get a list of Filenames from an FTP folder, based on the FilenamePattern and the ExtenstionPatten
+            </summary>
+            <param name="ftpFolder">The FTP folder.</param>
+            <param name="filenamePattern">The pattern to match the filename to. 
+            It can be "*", "*filename", "filename*", or "*filename*".</param>
+            <param name="extensionPattern">The pattern to match the extension to. 
+            It can be "*", "*extension", "extension*", or "*extension*".
+            If it is "" then files with no extension are returned.</param>
+            <exception cref="T:System.Net.WebException"></exception>
+            <exception cref="T:System.Exception"></exception>
+            <returns>A list of filenames.</returns>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.CreateNewRegex(System.String,System.String)">
+            <summary>
+            Create and return a new regular expression object, that can be used to match on filenames.
+            Notes:
+            The match is case insensitive. 
+            The filename can be accessed from the captured group "Filename".
+            The extension can be accessed from the captured group "Extension".
+            The extension returned will always be after the last "." in the filename.
+            The "." dividing the filename and extension is always added to the front of the extension.
+            Multiple "*" (eg "****" etc) will be collapsed to one "*".
+            eg "file.name.txt" will return "file.name" as the filename and ".txt" as the extension.
+            </summary>
+            <param name="filename">The pattern to match the filename to. 
+            It can be "*", "*filename", "filename*", or "*filename*".</param>
+            <param name="extension">The pattern to match the extension to. 
+            It can be "*", "*extension", "extension*", or "*extension*".
+            If it is "" then files with no extension are returned.
+            The extension cannot contain the character '.' (literal dot).</param>
+            <returns>A Regex object with a patten to match filenames.</returns>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.DownloadFileViaFTP(System.String,System.String,System.String)">
+            <summary>
+            Download a single file via FTP.
+            </summary>
+            <param name="FTPFolder">The FTP folder on the site, where the file is located.</param>
+            <param name="LocalFolder">The local folder to save the file to.</param>
+            <param name="Filename">The filename of the file to download.</param>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.Net.WebException"></exception>
+            <returns>True if the download is successful, throws an exception if not.</returns>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFilesViaFTP(System.String,System.String[],System.String,System.Boolean)">
+            <summary>
+            Uploads all files in Filenames to a FTPFolder folder
+            on the ftp server.
+            Moves successfully uploaded files to the specified success directory.
+            </summary>
+            <param name="FTPFolder">The folder where the files will be uploaded to. Use "" to upload to the site root.</param>
+            <param name="Filenames">The files to be uploaded. If the filenames in Filenames are not full paths,
+            they are assumed to be in the current working directory.</param>
+            <param name="SuccessDirectory">A directory (must be an absolute path) 
+            where the files are moved to after being successfully uploaded.</param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OPSI.FTP.OPSIFTPClient.UploadFileViaFTP(System.String,System.String)">
+            <summary>
+            Upload one File (Filename) to the FTPDestinationFolder.
+            </summary>
+            <param name="FTPDestinationFolder">The folder on the server.</param>
+            <param name="Filename">The Filename (including path) of the file to be uploaded.</param>
+            <returns>True, if file upload is successful. False, if the file upload is 
+            not confimed as succesful. An exception is thrown if an error occurs.</returns>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.Net.WebException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.FTPUri">
+            <summary>
+            The full FTP URI.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.Site">
+            <summary>
+            The FTP site name.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.Username">
+            <summary>
+            The FTP username.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.Password">
+            <summary>
+            The FTP password.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.SuppressUploadExceptions">
+            <summary>
+            If true, any exceptions caused during an upload are swallowed.
+            If false, any exceptions caused during an upload are thrown.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.SuppressDownloadExceptions">
+            <summary>
+            If true, any exceptions caused during a download are swallowed.
+            If false, any exceptions caused during a download are thrown.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.UseLogging">
+            <summary>
+            True to reporting logging information with NLog.
+            False otherwise.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:OPSI.FTP.OPSIFTPClient.DeleteFilesAfterDownload">
+            <summary>
+            Gets or sets a value indicating whether client should delete files after download.
+            </summary>
+            <value>
+            <c>true</c> if [delete files after download]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:OPSI.FTP.OPSIFTPClient.ReportProgress">
+            <summary>
+            Event that is fired to report progress out of the FTP object.
+            </summary>
+        </member>
+        <member name="T:OPSI.FTP.UploadFileAction">
+            <summary>
+            Enum dicating what must happen to the file after an upload.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.UploadFileAction.None">
+            <summary>
+            Default when created.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.UploadFileAction.Move">
+            <summary>
+            If the file must be moved to a storage directory after successful upload.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.UploadFileAction.Delete">
+            <summary>
+            If the file must be deleted after successful upload.
+            </summary>
+        </member>
+        <member name="T:OPSI.FTP.FTPAction">
+            <summary>
+            Current action by the FTP client.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.FTPAction.None">
+            <summary>
+            Default when created.
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.FTPAction.Downloading">
+            <summary>
+            Downloading
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.FTPAction.Uploading">
+            <summary>
+            Uploading
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.FTPAction.Deleting">
+            <summary>
+            Deleting
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.FTPAction.Moving">
+            <summary>
+            Moving
+            </summary>
+        </member>
+        <member name="F:OPSI.FTP.FTPAction.Checking">
+            <summary>
+            Checking
+            </summary>
+        </member>
+        <member name="M:OPSI.FTP.OPSISFTPClient.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="Site">The FTP site. If there is No ftp:// in the name, it will be added.</param>
+            <param name="Username">The username for the site.</param>
+            <param name="Password">The password for the site.</param>
+            <param name="useLogging">if set to <c>true</c> [use logging].</param>
+            <param name="deleteFilesAfterDownload">if set to <c>true</c> [delete files after download].</param>
+        </member>
+    </members>
+</doc>

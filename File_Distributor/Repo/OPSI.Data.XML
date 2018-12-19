@@ -1,0 +1,4822 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPSI.Data</name>
+    </assembly>
+    <members>
+        <member name="T:OPSI.Data.FLO.Objects.Customer">
+            <summary>
+            Class to model a customer.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Customer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.CustomerNumber">
+            <summary>
+            The customer number. Must be unique.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.CustomerName">
+            <summary>
+            The customer name.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.DepotCode">
+            <summary>
+            The depot code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.DeliveryPoint">
+            <summary>
+            The Delivery Point
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.CustomerClassCode">
+            <summary>
+            The CustomerClassCode
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.CustomerClassGroupCode">
+            <summary>
+            The CustomerClassGroupCode
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.DeliveryGroup">
+            <summary>
+            the delivery group
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Address">
+            <summary>
+            The Address
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.PostalCode">
+            <summary>
+            The PostalCode
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.NearestCorner">
+            <summary>
+            The NearestCorner
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.ContactName">
+            <summary>
+            The ContactName
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.PhoneNumber">
+            <summary>
+            The PhoneNumber
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.FaxNumber">
+            <summary>
+            The FaxNumber
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.VisitFrequency">
+            <summary>
+            The VisitFrequency
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Inactive">
+            <summary>
+            The Inactive
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Time_Fixed">
+            <summary>
+            The Time_Fixed
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Time_Weight">
+            <summary>
+            The Time_Weight
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Time_Volume">
+            <summary>
+            The Time_Volume
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Time_Units">
+            <summary>
+            The Time_Units
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Custom1">
+            <summary>
+            Custom1
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.Custom2">
+            <summary>
+            Custom2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Customer.DefaultOnly">
+            <summary>
+            The list of default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.CustomerClass">
+            <summary>
+            Class to model a customer class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.CustomerClass.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.CustomerClassCode">
+            <summary>
+            The customer class code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.CustomerClassName">
+            <summary>
+            The customer class name
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.CustomerClassGroupCode">
+            <summary>
+            the customer class group code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.WaitTime">
+            <summary>
+            the wait time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.TimeUnit">
+            <summary>
+            The time unit
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.TimeVolume">
+            <summary>
+            The time Volume
+            Corresponds to the tag "TimeVol"
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.TimeMass">
+            <summary>
+            The TimeMass
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.MinTime">
+            <summary>
+            The MinTime
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.Priority">
+            <summary>
+            The Priority
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClass.DefaultOnly">
+            <summary>
+            the default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.CustomerClassVehicleClassExclusion">
+            <summary>
+            Class to model a customer class vehicle class exclusion
+            Corresponds to a VehicleExclusions xml element.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.CustomerClassVehicleClassExclusion.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassVehicleClassExclusion.CustomerClassCode">
+            <summary>
+            the customer class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassVehicleClassExclusion.VehicleClassCode">
+            <summary>
+            the vehicle class code.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.CustomerClassWindow">
+            <summary>
+            Class to model a customer class window
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.CustomerClassWindow.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.DeliveryWindowCode">
+            <summary>
+            the delivery window code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.CustomerClassCode">
+            <summary>
+            The customer class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.DayOfWeek">
+            <summary>
+            DayOfWeek
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.WindowFrom">
+            <summary>
+            the from window
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.WindowTo">
+            <summary>
+            the to window
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.WindowFinishBy">
+            <summary>
+            The window finish by
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.Weight">
+            <summary>
+            the weight
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerClassWindow.DefaultOnly">
+            <summary>
+            The list of default only properties.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.CustomerDeliveryPoint">
+            <summary>
+            Class to hold customer and delivery point information.
+            A wrapper class to ensure that the customer and delivery point are imported together.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.CustomerDeliveryPoint.#ctor">
+            <summary>
+            constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerDeliveryPoint.Name">
+            <summary>
+            The Customer and DeliveryPoint name.
+            Setting or getting this value automatically populates the following:
+            Customer.CustomerName
+            DeliveryPoint.DeliveryPointDesc
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerDeliveryPoint.Code">
+            <summary>
+            The Customer and DeliveryPoint code. Must be unique.
+            Setting or getting this value automatically populates the following:
+            Customer.CustomerNumber
+            Customer.DeliveryPoint
+            DeliveryPoint.DeliveryPointName
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerDeliveryPoint.Customer">
+            <summary>
+            The customer
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.CustomerDeliveryPoint.DeliveryPoint">
+            <summary>
+            The DeliveryPoint associated with this customer.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.DeliveryGroup">
+            <summary>
+            Class to model a delivery group
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.DeliveryGroup.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.DeliveryGroupName">
+            <summary>
+            the delivery group
+            Corresponds to the XML tag "DeliveryGroup"
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.DeliveryGroupDescription">
+            <summary>
+            DeliveryGroupDescription
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.Active">
+            <summary>
+            Active
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.DefaultVehicle">
+            <summary>
+            The default vehicle
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.Regular">
+            <summary>
+            Regular
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.RegularDay">
+            <summary>
+            Regular day
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.SleepOut">
+            <summary>
+            The sleep out
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.SleepOutStops">
+            <summary>
+            SleepOutStops
+            Corresponds to the XML tag "SleepOutsMaxNum"
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.OnlyOn">
+            <summary>
+            OnlyOn
+            Corresponds to the XML Tag "Onlyon".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.NoWorkingHours">
+            <summary>
+            NoWorkingHours
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.Customers">
+            <summary>
+            A list of customer numbers.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroup.DefaultOnly">
+            <summary>
+            The list of default only properties.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.DeliveryGroupCustomer">
+            <summary>
+            Class to model a Delivery Group Customer
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.DeliveryGroupCustomer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroupCustomer.DeliveryGroupCode">
+            <summary>
+            the delivery group code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroupCustomer.CustomerNumber">
+            <summary>
+            the customer number
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.DeliveryGroupVehicleClassExclusion">
+            <summary>
+            Class to model a delivery group Vehicle Class exclusion
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.DeliveryGroupVehicleClassExclusion.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroupVehicleClassExclusion.DeliveryGroupCode">
+            <summary>
+            the delivery group code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroupVehicleClassExclusion.VehicleClassCode">
+            <summary>
+            The vehicle Class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryGroupVehicleClassExclusion.IsExclusion">
+            <summary>
+            Is Exclusion
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.DeliveryPoint">
+            <summary>
+            Class to model a delivery point.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.DeliveryPoint.#ctor">
+            <summary>
+            The constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.DeliveryPointName">
+            <summary>
+            The delivery point number. Must be unique.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.DeliveryPointDesc">
+            <summary>
+            The delivery point description.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.X">
+            <summary>
+            The X co-ordinate or Longitude of the delivery point.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.Y">
+            <summary>
+            The Y co-ordinate or Latitude of the delivery point.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.Unauthorised">
+            <summary>
+            Unauthorised
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.Approximate">
+            <summary>
+            Approximate
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.SearchRadius">
+            <summary>
+            SearchRadius
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.NewEntry">
+            <summary>
+            NewEntry
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.DeliveryPoint.DefaultOnly">
+            <summary>
+            The list of default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Depot">
+            <summary>
+            Class to model a FLO Depot.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Depot.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.DepotCode">
+            <summary>
+            The depot code. Must be unique.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.DepotName">
+            <summary>
+            The depot name.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.Longitude">
+            <summary>
+            The Longitude
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.Latitude">
+            <summary>
+            The Latitude
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.SearchRange">
+            <summary>
+            The SearchRange
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.WaitTime">
+            <summary>
+            The WaitTime
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.TimePerMass">
+            <summary>
+            The TimePerMass
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.TimePerVolume">
+            <summary>
+            The TimePerVolume
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.TimePerUnit">
+            <summary>
+            The TimePerUnit
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.Address1">
+            <summary>
+            The Address1
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.Address2">
+            <summary>
+            The Address2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.Address3">
+            <summary>
+            The Address3
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.Address4">
+            <summary>
+            The Address4
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.NewEntry">
+            <summary>
+            NewEntry
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Depot.DefaultOnly">
+            <summary>
+            The list of default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.eFLOAuxType">
+            <summary>
+            The FLO Aux Type.
+            Taken from efloAuxType in FLO.
+            Reference: FloEnums.h in Components.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Unknown">
+            <summary>
+            Used when the priority is not supplied.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Rev">
+            <summary>
+            Rev
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Stop">
+            <summary>
+            Stop
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Door">
+            <summary>
+            Door
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Rear">
+            <summary>
+            Rear
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Fuel">
+            <summary>
+            Fuel
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Cust">
+            <summary>
+            Cust
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOAuxType.Pump">
+            <summary>
+            Pump
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.eFLOPriority">
+            <summary>
+            The FLO Priority.
+            Taken from efloPriority in FLO.
+            Reference: FloEnums.h in Components.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.Unknown">
+            <summary>
+            Used when the priority is not supplied.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.None">
+            <summary>
+            None
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.FirstDelivery">
+            <summary>
+            FirstDelivery
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.SingleTrip">
+            <summary>
+            Single Trip
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.LeaveEmpty">
+            <summary>
+            Leave Empty
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.NotOnFirstLoad">
+            <summary>
+            Not On First Load
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.EndLoad">
+            <summary>
+            End Load
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOPriority.StartLoad">
+            <summary>
+            Start load
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.eFLOStaffType">
+            <summary>
+            The FLO Staft Type.
+            Taken from efloStaffType in FLO.
+            Reference: FloEnums.h in Components.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOStaffType.Unknown">
+            <summary>
+            Used when the staff is not supplied.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOStaffType.Driver">
+            <summary>
+            Driver
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOStaffType.Assistant">
+            <summary>
+            Assistant
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.eFLOWindowType">
+            <summary>
+            The FLO Window Type.
+            Taken from efloWindowType in FLO.
+            Reference: FloEnums.h in Components.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Unknown">
+            <summary>
+            Unknown, used when created.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.AnyDay">
+            <summary>
+            Any day
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Sunday">
+            <summary>
+            Sunday
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Monday">
+            <summary>
+            Monday
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Tuesday">
+            <summary>
+            Tuesday
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Wednesday">
+            <summary>
+            Wednesday
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Thursday">
+            <summary>
+            Thrusday
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Friday">
+            <summary>
+            Friday
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOWindowType.Saturday">
+            <summary>
+            Saturday
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Job">
+            <summary>
+            Class to model a FLO Job or Job Delivery.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Job.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.JobCode">
+            <summary>
+            the job code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.Source">
+            <summary>
+            Source
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.Detail">
+            <summary>
+            Detail
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.SpecialInstructions">
+            <summary>
+            SpecialInstructions
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.Hold">
+            <summary>
+            Hold
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.DeliveryGroup">
+            <summary>
+            DeliveryGroup
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.PickGroup">
+            <summary>
+            PickGroup
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.DateFrom">
+            <summary>
+            the from date
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.DateTo">
+            <summary>
+            The to date
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.CustomerNumber">
+            <summary>
+            Customer number
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.AmountOfInvoice">
+            <summary>
+            AmountOfInvoice
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.COD">
+            <summary>
+            COD
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.PickupCustomerNumber">
+            <summary>
+            PickupCustomerNumber
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.LoadPriority">
+            <summary>
+            LoadPriority
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.PreSchedule">
+            <summary>
+            PreSchedule
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.WindowStart">
+            <summary>
+            WindowStart
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.WindowEnd">
+            <summary>
+            WindowEnd
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.PickupWindowStart">
+            <summary>
+            PickupWindowStart
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.PickupWindowEnd">
+            <summary>
+            PickupWindowEnd
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.JobDuration">
+            <summary>
+            JobDuration
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.Priority">
+            <summary>
+            The priority
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.LineItems">
+            <summary>
+            The Line Items
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Job.DefaultOnly">
+            <summary>
+            The default only.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.LineItem">
+            <summary>
+            Class to model a FLO line item
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.LineItem.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.LineItem.ProductCode">
+            <summary>
+            the product Code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.LineItem.Units">
+            <summary>
+            The units
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.LineItem.Quantity">
+            <summary>
+            the quantity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.LineItem.Pickup">
+            <summary>
+            Pickup
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.LineItem.ShippedQuantity">
+            <summary>
+            ShippedQuantity
+            Corresponds to XML Tag "ShipedQuantity".
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Option">
+            <summary>
+            Class to model an option
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Option.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Option.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Option.Setting">
+            <summary>
+            The setting
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Option.Tip">
+            <summary>
+            The tip
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Option.DataType">
+            <summary>
+            the datatype
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Option.Class">
+            <summary>
+            the class
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Option.DefaultSetting">
+            <summary>
+            The default setting
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Product">
+            <summary>
+            Class which holds information for a product.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Product.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Product.FindProductByProductCode(System.String)">
+            <summary>
+            Find a Product based on Product Code.
+            </summary>
+            <param name="productCode">The Product Code.</param>
+            <returns>The Matched Product or null.</returns>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.ProductCode">
+            <summary>
+            The product code. Must be unique.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.ProductName">
+            <summary>
+            The product name.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.ProductClass">
+            <summary>
+            The product class code for this product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.Inactivated">
+            <summary>
+            If the product is active or not.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.LoadPriority">
+            <summary>
+            the load priority
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.UNNumber">
+            <summary>
+            UNNumber
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.ERGNumber">
+            <summary>
+            ERGNumber
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.HazardClass">
+            <summary>
+            HazardClass
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.Custom1">
+            <summary>
+            Custom1
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.Custom2">
+            <summary>
+            Custom2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.DangerousGoods">
+            <summary>
+            DangerousGoods
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.ProductDetails">
+            <summary>
+            the list of ProductDetails
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Product.DefaultOnly">
+            <summary>
+            The list of default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.ProductDetail">
+            <summary>
+            the product detail
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.ProductDetail.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.Units">
+            <summary>
+            The units used for this product detail
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.Quantity">
+            <summary>
+            The quantity of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.UnitSize">
+            <summary>
+            The UnitSize of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.Height">
+            <summary>
+            The height of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.Length">
+            <summary>
+            The length of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.Width">
+            <summary>
+            The width of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.Weight">
+            <summary>
+            The weight of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.ProductDetail.DefaultOnly">
+            <summary>
+            The list of default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.eFLOVehicleType">
+            <summary>
+            The FLO vehicle type.
+            Taken from efloVehicleType in FLO.
+            Reference: FloEnums.h in Components.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOVehicleType.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOVehicleType.Vehicle">
+            <summary>
+            Vehicle
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOVehicleType.Horse">
+            <summary>
+            Horse
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.Objects.eFLOVehicleType.Trailer">
+            <summary>
+            Trailer
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Driver">
+            <summary>
+            Class to model a driver.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Driver.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.DriverName">
+            <summary>
+            the driver name
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.DriverCode">
+            <summary>
+            the driver code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.DepotCode">
+            <summary>
+            the depot code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.HourlyRate">
+            <summary>
+            the hourly rate
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.OvertimeRate">
+            <summary>
+            the over time rate
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.SleepoutCost">
+            <summary>
+            the sleep out cost
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.Inactivated">
+            <summary>
+            Inactivated
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.DefaultAvailable">
+            <summary>
+            Default Available
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.LicenceCode">
+            <summary>
+            The licence code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.PDPLicenceExpiry">
+            <summary>
+            PDP Licence Expiry
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.Cellphone">
+            <summary>
+            Cell phone
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.Note1">
+            <summary>
+            Note 1
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.Note2">
+            <summary>
+            Note 2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.PrimaryDeliveryGroup">
+            <summary>
+            Primary delivery group
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.SecondaryDeliveryGroup">
+            <summary>
+            Secondary Delivery Group
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.StaffType">
+            <summary>
+            the staff type
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Driver.DefaultOnly">
+            <summary>
+            the default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Vehicle">
+            <summary>
+            Class to model a vehicle
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Vehicle.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.VehicleCode">
+            <summary>
+            the vehicle Code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.VehicleName">
+            <summary>
+            the vehicle name.
+            Corresponds to the "Vehicle" tag
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.VehicleClass">
+            <summary>
+            the vehicle class
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.DepotCode">
+            <summary>
+            the depot code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.DefaultDriverCode">
+            <summary>
+            the driver code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Make">
+            <summary>
+            The make
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Model">
+            <summary>
+            The model
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.EngineNumber">
+            <summary>
+            The engine number
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.ChassisNumber">
+            <summary>
+            The chassis number
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.RegistrationRenewal">
+            <summary>
+            the registration renewal
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.GPSProvider">
+            <summary>
+            the GPS Provider
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.GPSUnit">
+            <summary>
+            the GPS Unit
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Aux1">
+            <summary>
+            Aux1
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Aux2">
+            <summary>
+            Aux2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Aux3">
+            <summary>
+            Aux3
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Aux4">
+            <summary>
+            Aux4
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Custom">
+            <summary>
+            Custom
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Available">
+            <summary>
+            Available
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Inactivated">
+            <summary>
+            Inactivated
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.Odometer">
+            <summary>
+            Odometer
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.VehicleType">
+            <summary>
+            the vehicle type
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Vehicle.DefaultOnly">
+            <summary>
+            the default only list
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.VehicleClass">
+            <summary>
+            Class to model a vehicle class
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.VehicleClass.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.VehicleClassName">
+            <summary>
+            The vehicle class name
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MetaClassName">
+            <summary>
+            The MetaClassName
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Colour">
+            <summary>
+            The Colour
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Cost_Kilometre">
+            <summary>
+            Cost_Kilometre
+            Corresponds to tag "Cost_Kilometer".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Cost_Hour">
+            <summary>
+            Cost_Hour
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Cost_Day">
+            <summary>
+            Cost_Day
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Cost_Kilometre_Weight">
+            <summary>
+            Cost_Kilometre_Weight
+            Corresponds to tag "Cost_Kilometer_Weight".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Start">
+            <summary>
+            Start
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.NoLater">
+            <summary>
+            NoLater
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Bulk">
+            <summary>
+            Bulk
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MaxLoad">
+            <summary>
+            MaxLoad
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MaxDrive">
+            <summary>
+            MaxDrive
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MaxDuty">
+            <summary>
+            MaxDuty
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MaxBreaks">
+            <summary>
+            MaxBreaks
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MaxStops">
+            <summary>
+            MaxStops
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MaxSleep">
+            <summary>
+            MaxSleep
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MinSleep">
+            <summary>
+            MinSleep
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.MinCycle">
+            <summary>
+            MinCycle
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.BreakLength">
+            <summary>
+            BreakLength
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.BreakFrequency">
+            <summary>
+            BreakFrequency
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.DutyBreakLength">
+            <summary>
+            DutyBreakLength
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.DutyBreakFrequency">
+            <summary>
+            DutyBreakFrequency
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.UnitCapacity">
+            <summary>
+            UnitCapacity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.BaseLength">
+            <summary>
+            BaseLength
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.BaseWidth">
+            <summary>
+            BaseWidth
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.Height">
+            <summary>
+            Height
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.VehicleClass.DefaultOnly">
+            <summary>
+            The list of default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.Objects.Window">
+            <summary>
+            Class to model a delivery window.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.Objects.Window.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.DeliveryWindowCode">
+            <summary>
+            the delivery window code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.CustomerCode">
+            <summary>
+            the customer code or number.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.WindowType">
+            <summary>
+            the Window Type
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.EarliestStart">
+            <summary>
+            the earliest start
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.LatestStart">
+            <summary>
+            the latest start
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.FinishBy">
+            <summary>
+            The finish by
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.WindowWeight">
+            <summary>
+            The window weight
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.Objects.Window.DefaultOnly">
+            <summary>
+            the default only properties
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.FLO.FLOXmlGeneration">
+            <summary>
+            Class to generate XML for importing into FLO.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.FLOXmlGeneration.FLODateTimeXmlFormat">
+            <summary>
+            The String format of a DateTime.
+            FLO accepts this format in XML.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.#ctor(System.Boolean,System.Int32)">
+            <summary>
+            Default Constructor.
+            </summary>
+            <param name="useBatching">If batching is to be used or not.</param>
+            <param name="batchLimit">
+            It UseBatching is true, and BatchLimit is 0, then each batch will be the size of the list of objects in that batch.
+            Different lists will be in different batches.
+            If UseBatching is true, and BatchLimit is not 0, then the batches will be the size of BatchLimit.
+            If UseBatching is false, BatchLimit is ignored, and the single batch returned will have of all the
+            objects in all the lists.</param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateXmlImport(System.Object)">
+            <summary>
+            Create an Xml Import string for a single object.
+            </summary>
+            <param name="importObject">The object to import.
+            The object must be a List with objects from namespace OPSI.Data.FLO.</param>
+            <returns>The Xml String of the object.</returns>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateXmlImport(System.Object[])">
+            <summary>
+            Create an Xml Import string of different object types.
+            </summary>
+            <param name="importObjects">The objects to import.
+            Each element in the array must be a List with objects from namespace OPSI.Data.FLO.</param>
+            <returns>The Xml String for the lists.</returns>
+        </member>
+        <member name="F:OPSI.Data.FLO.FLOXmlGeneration.logger">
+            <summary>
+            NLog logger.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.FLOXmlGeneration.masterDataDocumentRoot">
+            <summary>
+            Xml root called Import. Holds the last Xml document created
+            by calling CreateXmlImport(). Else null if the method has not been called.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.FLOXmlGeneration.currentEntry">
+            <summary>
+            The current entry in the batch.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.FLOXmlGeneration.singleBatchPerList">
+            <summary>
+            If batching is enabled, but an invalid (less than 0) number is given as
+            a batch limit, then each list of objects is sorted into their own batch.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.FLO.FLOXmlGeneration.xmlStrings">
+            <summary>
+            A list of xml strings
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreatOptionImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Option})">
+            <summary>
+             Create the XML for options import.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDepotImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Depot})">
+            <summary>
+            Create the XML for depots import.
+            </summary>
+            <param name="depots"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDriverImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Driver})">
+            <summary>
+            Create the XML for drivers import.
+            </summary>
+            <param name="drivers"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDeliveryPointImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.DeliveryPoint})">
+            <summary>
+            Create the XML for delivery points import.
+            </summary>
+            <param name="deliveryPoints"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDeliveryGroupImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.DeliveryGroup})">
+            <summary>
+            Create the XML for delivery points import.
+            </summary>
+            <param name="deliveryGroups"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDeliveryGroupVehicleExclusionImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.DeliveryGroupVehicleClassExclusion})">
+            <summary>
+            Create the XML for delivery group vehicle classes exclusion import.
+            </summary>
+            <param name="deliveryGroupVehicleClasses"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDeliveryGroupCustomerImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.DeliveryGroupCustomer})">
+            <summary>
+            Create the XML for delivery group customer import.
+            </summary>
+            <param name="deliveryGroupCustomers"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateCustomerImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Customer})">
+            <summary>
+            Create the XML for customers import.
+            </summary>
+            <param name="customers"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateCustomerClassImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.CustomerClass})">
+            <summary>
+            Create the XML for customer classes import.
+            </summary>
+            <param name="customerClasses"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateCustomerClassVehicleClassExclusionImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.CustomerClassVehicleClassExclusion})">
+            <summary>
+            Create the XML for customer class vehicle class exclusion import.
+            </summary>
+            <param name="customerClassVehicleClassExclusions"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateCustomerClassWindowImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.CustomerClassWindow})">
+            <summary>
+            Create the XML for customer class windows import.
+            </summary>
+            <param name="customerClassWindows"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateCustomerDeliveryPointImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.CustomerDeliveryPoint})">
+            <summary>
+            Create the XML for CustomerDeliveryPoints import.
+            </summary>
+            <param name="customerDeliveryPoints"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateProductImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Product})">
+            <summary>
+            Create the XML for Product import.
+            </summary>
+            <param name="products"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateVehicleImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Vehicle})">
+            <summary>
+            Create the XML for Vehicle import.
+            </summary>
+            <param name="vehicles"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateVehicleClassImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.VehicleClass})">
+            <summary>
+            Create the XML for Vehicle Classes import.
+            </summary>
+            <param name="vehicleclasses"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateWindowImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Window})">
+            <summary>
+            Create the XML for windows import.
+            </summary>
+            <param name="windows"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateJobImportXml(System.Collections.Generic.List{OPSI.Data.FLO.Objects.Job})">
+            <summary>
+            Create the XML for Job import.
+            </summary>
+            <param name="jobs"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateDeliveryPointXml(OPSI.Data.FLO.Objects.DeliveryPoint)">
+            <summary>
+            Create the Xml for a single delivery point
+            </summary>
+            <param name="deliveryPoint"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CreateCustomerXml(OPSI.Data.FLO.Objects.Customer)">
+            <summary>
+            Create the Xml for a single customer
+            </summary>
+            <param name="customer"></param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.InitialiseImportDocumentTags">
+            <summary>
+            Initialise the import, by naming the root document.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.IncreaseBatchLimit(System.Int32)">
+            <summary>
+            Increase the batch limit if not using batching.
+            Set the batch limit if using batching and it has not been set yet.
+            </summary>
+            <param name="limit">The limit to increase the batch by.</param>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.UpdateBatchStatus">
+            <summary>
+            Update the current batch status.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CheckIfBatchFinished">
+            <summary>
+            Check if the current batch is finished.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.FLO.FLOXmlGeneration.CloseBatch">
+            <summary>
+            Close the current batch and add the XML string to the list of strings.
+            Restart the XML Document.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.FLOXmlGeneration.UseBatching">
+            <summary>
+            True if batching is to be used.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.FLO.FLOXmlGeneration.BatchLimit">
+            <summary>
+            The limit of the number of entries (of any object type) in an import batch.
+            If this is not set, but batching is enabled, then the size of the list of
+            objects to be batched will dicate the size of the batch.
+            For example: If the batch limit is 13 and the number of products to be
+            batched is 2000, then 154 xml strings will be returned.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.Optima.Objects.ServiceRequest">
+            <summary>
+            Class that holds all information of a Service request. (Optima)
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.Optima.Objects.ServiceRequest.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.Optima.Objects.ServiceRequest.#ctor(System.String)">
+            <summary>
+            Overloaded constructor.
+            </summary>
+            <param name="DepotCode">The depot code.</param>
+        </member>
+        <member name="M:OPSI.Data.Optima.Objects.ServiceRequest.#ctor(System.String,System.String)">
+            <summary>
+            Overloaded Constructor.
+            </summary>
+            <param name="DepotCode">The depot code.</param>
+            <param name="PrincipalCode">The principle code.</param>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.Products">
+            <summary>
+            A list of the lineitems or products on this order.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.SRReference">
+            <summary>
+            The order number or unique job code for this order.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.DeliveryDate">
+            <summary>
+            The delivery date of this order.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.Customer">
+            <summary>
+            The Customer who this order is for.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.ToSiteCode">
+            <summary>
+            The Code of the site where this order is going TO.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.FromSiteCode">
+            <summary>
+            The Code of the site where this order is coming FROM.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.DepotCode">
+            <summary>
+            The Default Depot Code is stored here.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.PrincipalCode">
+            <summary>
+            The code of the principal who is paying for this SR. (The client the Plato DB.)
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.SourceName">
+            <summary>
+            The name of the source of this SR.
+            Must match a name in the Plato Source table.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.AuxSourceName">
+            <summary>
+            The name of the auxiliary source of this SR.
+            Must match a name in the Plato Auxiliary Source table.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.Usercode">
+            <summary>
+            The code of the user that is doing the import.
+            Usually an interface code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.Filename">
+            <summary>
+            The name of the file this order orginates from.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.TypeID">
+            <summary>
+            TypeID field used in the Msg_SRComment table.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.SRSubject">
+            <summary>
+            Subject field used in the Msg_SRComment table.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.Optima.Objects.ServiceRequest.SRContent">
+            <summary>
+            Content field used in the Msg_SRComment table.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.AbstractPlatoClass">
+            <summary>
+            Fields common to all classes.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.AbstractPlatoClass.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.AbstractPlatoClass"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.AbstractPlatoClass.FromString``1(System.String)">
+            <summary>
+            Returns instance of type T froms the Xml string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.AbstractPlatoClass.IsValid">
+            <summary>
+            Flag indicates if the object was deserialized successfully.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.AbstractPlatoClass.ValidErrorMessage">
+            <summary>
+            Error message if deserialization failed.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.AbstractPlatoClass.RawXml">
+            <summary>
+            Raw Xml passed to FromString.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.CancelledJob">
+            <summary>
+            Class to hold the cancelled job information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.CancelledJob.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.CancelledJob.JobCode">
+            <summary>
+            the job code
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ClearNonDeliveryStops.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ClearNonDeliveryStops.FromString(System.String)">
+            <summary>
+            Returns NonDeliveryStop instance from the Xml string.
+            </summary>
+            <param name="o">The o.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ClearNonDeliveryStops.VehicleCode">
+            <summary>
+            The Vehicle Code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ClearNonDeliveryStops.DateFrom">
+            <summary>
+            The DateFrom.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ClearNonDeliveryStops.DateTo">
+            <summary>
+            The DateTo.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Client">
+            <summary>
+            Class to hold Client information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Client.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Client.FindClientByClientCode(System.String)">
+            <summary>
+            Predicate used to find a Client based on the code
+            </summary>
+            <param name="ClientCode">The Client code.</param>
+            <returns>The Matched Client, if found or NULL, if not.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Client.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Client.ClientCode">
+            <summary>
+            The code of the client.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Client.ClientName">
+            <summary>
+            The Name of the client.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Client.Website">
+            <summary>
+            The website
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Client.IsActive">
+            <summary>
+            If the client is active or not.
+            _isactive = "0" means that the client is INACTIVE.
+            _isactive = "1" means that the client is ACTIVE.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Compartment">
+            <summary>
+            Class to model a compartment
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Compartment.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.CompartmentName">
+            <summary>
+            The compartment name. Must be populated.
+            XML Tag: Compartment
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.VehicleClassCode">
+            <summary>
+            The vehicle class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.Section">
+            <summary>
+            The section
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.MaxLoad">
+            <summary>
+            the max load.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.UnitCapacity">
+            <summary>
+            Unit Capacity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.Unit2Capacity">
+            <summary>
+            Unit 2 Capacity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.Unit3Capacity">
+            <summary>
+            Unit 3 Capacity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.BaseLength">
+            <summary>
+            BaseLength
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.RestrictLength">
+            <summary>
+            Restrict Length
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.BaseWidth">
+            <summary>
+            BaseWidth
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.RestrictWidth">
+            <summary>
+            Restrict Width
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.Height">
+            <summary>
+            Height
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.RestrictHeight">
+            <summary>
+            Restrict Height
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Compartment.FillBy">
+            <summary>
+            FillBy
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.DeleteImport">
+            <summary>
+            DeleteImport to cancel a trip in PLATO.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.DeleteImport.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.DeleteImport"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.DeleteImport.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.DeleteImport.ActTripCode">
+            <summary>
+            Gets or sets the act trip code.
+            </summary>
+            <value>
+            The act trip code.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Fleet">
+            <summary>
+            Class to hold fleet information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Fleet.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Fleet.FleetCode">
+            <summary>
+            The code of the fleet.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Fleet.FleetName">
+            <summary>
+            The Name of the fleet.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Fleet.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Job">
+            <summary>
+            Class to hold job information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Job.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.JobCode">
+            <summary>
+            External ID/code for this job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.DomainCode">
+            <summary>
+            the domain code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.GroupWithJobCode">
+            <summary>
+            External ID/code for the job that must be grouped with this job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.JobGroupingConstraint">
+            <summary>
+            Job Grouping Constraint.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.DeliveryGroup">
+            <summary>
+            Job Delivery group.
+            Corresponds to the "DGroup" tag in the XML import.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.PriorityJob">
+            <summary>
+            The Job Priority
+            This integer field indicates the priority of the job.
+            Typical values between 1 and 200, where a normal value is 100.
+            It can be left out.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.FromSiteCode">
+            <summary>
+            The code of the site where this job is coming FROM.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ToSiteCode">
+            <summary>
+            The code of the site where this job is going TO.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.NameSiteCode">
+            <summary>
+            The name of the who this job is for.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ClientCode">
+            <summary>
+            The code of the client this job is for.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.DateFrom">
+            <summary>
+            From date for the job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.DateTo">
+            <summary>
+            To date for the job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.DueDate">
+            <summary>
+            Date the job has to be done by.
+            </summary> 
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.FromWindowFrom">
+            <summary>
+            The From time of the loading window at the From site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.FromWindowTo">
+            <summary>
+            The To time of the loading window at the From site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.FromWindowFinish">
+            <summary>
+            The time the loading at the From site must be finished by.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.FromWindowWeight">
+            <summary>
+            The weighting to apply to the loading window at the From site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ToWindowFrom">
+            <summary>
+            The From time of the loading window at the To Site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ToWindowTo">
+            <summary>
+            The To time of the loading window at the To site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ToWindowFinish">
+            <summary>
+            The time the loading at the To site must be finished by.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ToWindowWeight">
+            <summary>
+            The weighting to apply to the loading window at the To site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.ScheduleStatus">
+            <summary>
+            The scheduled status of the job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.Source">
+            <summary>
+            The source of the job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.Detail">
+            <summary>
+            The detail of the job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.SpecialInstructions">
+            <summary>
+            The special instructions of the job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.TargetType">
+            <summary>
+            The type of target
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.Can_Go_Prioriy">
+            <summary>
+            Can_Go_Prioriy
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.LoadingTAT">
+            <summary>
+            Loading Turn Around Time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.OffloadingTAT">
+            <summary>
+            Offloading Turn Around Time 
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Job.LineItems">
+            <summary>
+            A list of line items on this job.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.LineItem">
+            <summary>
+            Class to handle lineitems.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.LineItem.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.LineItem.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.LineItem.FromString(System.String)">
+            <summary>
+            Returns LineItem instance from the Xml string.
+            </summary>
+            <param name="o">The o.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.LineItemName">
+            <summary>
+            Name of the line item.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.LineItemDesc">
+            <summary>
+            Description of the line item.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.LineItemDescSpecified">
+            <summary>
+            Gets a value indicating whether the line item desc is specified.
+            </summary>
+            <value>
+            <c>true</c> if the line item desc is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.ProductCode">
+            <summary>
+            The product code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.JobValue">
+            <summary>
+            The value of the Job.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.COD">
+            <summary>
+            Cash to be paid on delivery.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.WeightPerQuantity">
+            <summary>
+            The Weight per quantity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.VolumePerQuantity">
+            <summary>
+            The Volume per quantity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.UnitPerQuantity">
+            <summary>
+            The unit per quantity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.Unit2PerQuantity">
+            <summary>
+            The unit 2 per quantity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.Unit3PerQuantity">
+            <summary>
+            The unit 3 per quantity
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.QuantumQuantity">
+            <summary>
+            The quantum quantity for this lineitem.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LineItem.Target">
+            <summary>
+            This lineitems' target.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LoadBay.LoadBayCode">
+            <summary>
+            The VehicleClassCode.
+            Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LoadBay.MapPointCode">
+            <summary>
+            the Section
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.LoadBay.LoadBayName">
+            <summary>
+            the ProductClassCode
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Mappoint">
+            <summary>
+            Class to handle Mappoints.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Mappoint.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.MappointName">
+            <summary>
+            The Map point name, corresponds to the "MapPoint" XML tag.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.MPCode">
+            <summary>
+            The external code for this mappoint.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.MPClassCode">
+            <summary>
+            The external class code for this mappoint.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.Internal">
+            <summary>
+            If this is an internal site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.VehicleSite">
+            <summary>
+            If this is a vehicle site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.X">
+            <summary>
+            The X co-ordinate or Longitude of the mappoint.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.Y">
+            <summary>
+            The Y co-ordinate or Latitude of the mappoint.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.FixedTime">
+            <summary>
+            The fixed time at the Mappoint. (Expressed in minutes)
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.Hitching">
+            <summary>
+            The time taken for hitching at the Mappoint. (Expressed in minutes)
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.Unhitching">
+            <summary>
+            The time taken for unhitching at the Mappoint. (Expressed in minutes)
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Mappoint.LoadBay">
+            <summary>
+            Load bay Info.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.MappointClass">
+            <summary>
+            Class to handle Mappoint class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.MappointClass.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.MappointClass.FindMappointClassByCode(System.String)">
+            <summary>
+            Predicate used to find a MappointClass based on the mappoint class code.
+            </summary>
+            <param name="mappointClassCode">The code.</param>
+            <returns>The Matched MappointClass, if found or NULL, if not.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.MappointClass.MPClass">
+            <summary>
+            Mappoint class name.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.MappointClass.MPClassCode">
+            <summary>
+            Mappoint class code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.MappointClass.FixedTime">
+            <summary>
+            The fixed time for this mappoint class. (Expressed in minutes)
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.MappointClass.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.NonDeliveryStop.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.NonDeliveryStop.FromString(System.String)">
+            <summary>
+            Returns NonDeliveryStop instance from the Xml string.
+            </summary>
+            <param name="o">The o.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.NDSCode">
+            <summary>
+            The NDSCode.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.VehicleCode">
+            <summary>
+            The Vehicle Code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.EarliestStart">
+            <summary>
+            The Earliest Start".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.EarliestFinish">
+            <summary>
+            The Earliest Finish".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.LatestFinish">
+            <summary>
+            The Latest Finish".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.Duration">
+            <summary>
+            The Duration".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.MapPointCode">
+            <summary>
+            The MapPointCode.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.ManualOverrideTime">
+            <summary>
+            The Manual Override Time".
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.NonDeliveryStop.Cancelled">
+            <summary>
+            Whether this stop is cancelled".
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Product">
+            <summary>
+            Class which holds information for a product.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Product.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Product.FindProductByProductCode(System.String)">
+            <summary>
+            Find a Product based on Product Code.
+            </summary>
+            <param name="productCode">The Product Code.</param>
+            <returns>The Matched Product or null.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.ProductCode">
+            <summary>
+            The product code. Must be unique.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.ProductName">
+            <summary>
+            The product name.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.ProductClassCode">
+            <summary>
+            The product class code for this product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.Inactivated">
+            <summary>
+            If the product is active or not.
+            Inactivated = "0" means that the product is ACTIVE.
+            Inactivated = "1" means that the product is INACTIVE.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.Units">
+            <summary>
+            The units used for this product
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.Height">
+            <summary>
+            The height of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.BaseLength">
+            <summary>
+            The base length of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.BaseWidth">
+            <summary>
+            The base width of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.Weight">
+            <summary>
+            The weight of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.StackingHeight">
+            <summary>
+            The stacking height of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.UnitSize">
+            <summary>
+            The size of the product for unit.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.UnitSize2">
+            <summary>
+            The size of the product for unit 2.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.UnitSize3">
+            <summary>
+            The size of the product for unit 3.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.LoadPriority">
+            <summary>
+            the load priority
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.ReportUnits">
+            <summary>
+            report units
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.ReportGroup">
+            <summary>
+            report group
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.NetWeight">
+            <summary>
+            The Net weight of the product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.QuantityPallet">
+            <summary>
+            Quantity per pallet.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.QuantityLayer">
+            <summary>
+            Quantity per layer of a pallet.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.Quantity">
+            <summary>
+            The quantity of this lineitem/product. Not Used for XML Import.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.UnitID">
+            <summary>
+            The unit id associated with this product. Not Used for XML Import.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.UnitTypeID">
+            <summary>
+            The unit type id associated with this product. Not Used for XML Import.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.HazardClass">
+            <summary>
+            Hazard class for a product.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Product.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.ProductClass">
+            <summary>
+            Class to hold infomation about Product classes.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ProductClass.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ProductClass.FindProductClassByCode(System.String)">
+            <summary>
+            Predicate used to find a product class based on the product
+            class code.
+            </summary>
+            <param name="productClassCode">The Product Class Code.</param>
+            <returns>The Matched Product class, if found or NULL, if not.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ProductClass.ProductClassName">
+            <summary>
+            The name of the product class, corresponding to the "ProductClass" XML Tag.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ProductClass.ProductClassCode">
+            <summary>
+            The product class code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ProductClass.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ProductProductExclusion.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ProductProductExclusion.FindProductClassByCode(System.String)">
+            <summary>
+            Predicate used to find a product class based on the product
+            class code.
+            </summary>
+            <param name="productClassCode">The Product Class Code.</param>
+            <returns>The Matched Product class, if found or NULL, if not.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ProductProductExclusion.ExcludedProductClassCode">
+            <summary>
+            The code of the Excluded product class
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ProductProductExclusion.ProductClassCode">
+            <summary>
+            The product class code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ProductProductExclusion.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Responses.BaseResponse">
+            <summary>
+            Base response with common fields.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.BaseResponse.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.IsSuccess">
+            <summary>
+            Indicates if Plato returned a positive response.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.IsAliasError">
+            <summary>
+            Gets a value indicating whether [is alias error].
+            </summary>
+            <value>
+              <c>true</c> if [is alias error]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.IsEAccessViolation">
+            <summary>
+            Gets a value indicating whether [is e access violation].
+            </summary>
+            <value>
+              <c>true</c> if [is e access violation]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.IsBadAllocation">
+            <summary>
+            Gets a value indicating whether [is bad allocation].
+            </summary>
+            <value>
+              <c>true</c> if [is bad allocation]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.IsHaveFault">
+            <summary>
+            Gets a value indicating whether there are one or more faults.
+            </summary>
+            <value>
+              <c>true</c> if [is have fault(s)]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.FaultErrorMessages">
+            <summary>
+            Gets the fault error messages (concatenation of all fault error descriptions).
+            </summary>
+            <value>
+            The fault error messages.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.Ok">
+            <summary>
+            Gets or sets the ok. Value returned from PLATO.
+            </summary>
+            <value>
+            The ok.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.Faults">
+            <summary>
+            Gets or sets the fault.
+            </summary>
+            <value>
+            The fault.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.OkZero">
+            <summary>
+            Gets the ok zero string.
+            </summary>
+            <value>
+            The ok zero.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.BaseResponse.OkOne">
+            <summary>
+            Gets the ok one string.
+            </summary>
+            <value>
+            The ok one.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Responses.DeleteImportResponse">
+            <summary>
+            Response from PLATO after cancelling a trip.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.DeleteImportResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.Responses.DeleteImportResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.DeleteImportResponse.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.DeleteImportResponse.FromString(System.String)">
+            <summary>
+            Returns DeleteImportResponse from a string.
+            </summary>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.DeleteImportResponse.Identifier">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>
+            The identifier.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Responses.Fault">
+            <summary>
+            PLATO Fault.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.Fault.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.Responses.Fault"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.Fault.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.Fault.FromString(System.String)">
+            <summary>
+            Returns a fault object from a string.
+            </summary>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.IsAliasError">
+            <summary>
+            Gets a value indicating whether [is alias error].
+            </summary>
+            <value>
+              <c>true</c> if [is alias error]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.IsEAccessViolation">
+            <summary>
+            Gets a value indicating whether [is e access violation].
+            </summary>
+            <value>
+              <c>true</c> if [is e access violation]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.IsBadAllocation">
+            <summary>
+            Gets a value indicating whether [is bad allocation].
+            </summary>
+            <value>
+              <c>true</c> if [is bad allocation]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.Type">
+            <summary>
+            Gets or sets the type.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.Identifier">
+            <summary>
+            Identifier.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.ErrorMessage">
+            <summary>
+            ErrorMessage.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.Function">
+            <summary>
+            Function.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.ErrorCode">
+            <summary>
+            Gets or sets the error code.
+            </summary>
+            <value>
+            The error code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.Fault.DateTime">
+            <summary>
+            DateTime
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Responses.ImportResponse">
+            <summary>
+            ImportResponse from PLATO.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.ImportResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.Responses.ImportResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.ImportResponse.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.ImportResponse.FromString(System.String)">
+            <summary>
+            Returns ImportResponse instance froms the Xml string.
+            </summary>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.ImportResponse.SlotResponse">
+            <summary>
+            Gets or sets the slot response.
+            </summary>
+            <value>
+            The slot response.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Responses.SlotResponse">
+            <summary>
+            Response after ask Plato to do a slot booking.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.SlotResponse.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.Responses.SlotResponse"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.SlotResponse.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Responses.SlotResponse.FromString(System.String)">
+            <summary>
+            Returns SlotResponse instance from the Xml string.
+            </summary>
+            <param name="p">The p.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.SlotResponse.Result">
+            <summary>
+            Gets or sets the result.
+            </summary>
+            <value>
+            The result.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.SlotResponse.ResultMessage">
+            <summary>
+            Gets or sets the result message.
+            </summary>
+            <value>
+            The result message.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.SlotResponse.PickupTime">
+            <summary>
+            Gets or sets the pickup time.
+            </summary>
+            <value>
+            The pickup time.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.SlotResponse.DropoffTime">
+            <summary>
+            Gets or sets the dropoff time.
+            </summary>
+            <value>
+            The dropoff time.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.SlotResponse.ResultZero">
+            <summary>
+            Gets the ok zero string.
+            </summary>
+            <value>
+            The ok zero.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Responses.SlotResponse.ResultOne">
+            <summary>
+            Gets the ok one string.
+            </summary>
+            <value>
+            The ok one.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.ScheduleJob">
+            <summary>
+            Class to handle scheduled jobs.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.ScheduleJob.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.JobCode">
+            <summary>
+            External Job code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.VehicleCode">
+            <summary>
+            External vehicle code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.ScheduleName">
+            <summary>
+            The name of the schedule.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.Finalised">
+            <summary>
+            If the schedule is finalised or not.
+            0 = false, 1 = true.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.TripName">
+            <summary>
+            The name of this trip.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.TripCode">
+            <summary>
+            The code of this trip.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.TripPosition">
+            <summary>
+            The trip position
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.LoadPosition">
+            <summary>
+            The position where this trip is first loaded.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.OffLoadPosition">
+            <summary>
+            The position where this trip is first offloaded.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.ScheduleJob.LockStatus">
+            <summary>
+            The position where this trip is first offloaded.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SchedulerRun">
+            <summary>
+            class to model a scheduler run.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SchedulerRun.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleID">
+            <summary>
+            the schedule ID
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleCode">
+            <summary>
+            the schedule Code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleName">
+            <summary>
+            the scheduleName
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.Mode">
+            <summary>
+            The mode to run the schedule in.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.DateFrom">
+            <summary>
+            the date from
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.DateTo">
+            <summary>
+            the date to
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.DomainCode">
+            <summary>
+            The domain code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SchedulerRun.JobCodes">
+            <summary>
+            The list of job codes of the jobs to be added to this schedule.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleMode">
+            <summary>
+            The allowable scheduler modes.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleMode.NewSchedule">
+            <summary>
+            Run a new schedule
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleMode.Recalculate">
+            <summary>
+            Recalculate a schedule
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.SchedulerRun.ScheduleMode.RerunSchedule">
+            <summary>
+            Re run a schedule
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Section">
+            <summary>
+            Class to model a section
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Section.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Section.SectionName">
+            <summary>
+            The Section name. Must be populated.
+            XML Tag: Section
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Section.VehicleClassCode">
+            <summary>
+            The vehicle class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Section.Sealed">
+            <summary>
+            Sealed
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Section.BulkPacking">
+            <summary>
+            BulkPacking
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Section.AllowedOverloading">
+            <summary>
+            AllowedOverloading
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Section.OverloadPenalty">
+            <summary>
+            OverloadPenalty
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Site">
+            <summary>
+            Class to handle sites.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Site.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteName">
+            <summary>
+            The name of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteCode">
+            <summary>
+            The code of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteNumber">
+            <summary>
+            The number of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.MappointCode">
+            <summary>
+            The code of the mappoint that this site is linked to.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteClassCode">
+            <summary>
+            The code of the class this site is linked to.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.Address1">
+            <summary>
+            Line 1 of the address.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.Address2">
+            <summary>
+            Line 2 of the address.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.Address3">
+            <summary>
+            Line 3 of the address.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.Address4">
+            <summary>
+            Line 4 of the address.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.Suburb">
+            <summary>
+            The suburb of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.CityTown">
+            <summary>
+            The City or Town of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.PostalCode">
+            <summary>
+            The postal code of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.NearestCorner">
+            <summary>
+            The nearest corner of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.ContactName">
+            <summary>
+            The contact name of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.PhoneNumber">
+            <summary>
+            The phone number of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.FaxNumber">
+            <summary>
+            The fax number of the site.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteInfo1">
+            <summary>
+            Site info field 1.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteInfo2">
+            <summary>
+            Site info field 2.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteInfo3">
+            <summary>
+            Site info field 3.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteInfo4">
+            <summary>
+            Site info field 4.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteInfo5">
+            <summary>
+            Site info field 5.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.SiteInfo6">
+            <summary>
+            Site info field 6.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.Inactive">
+            <summary>
+            If the site is active or not.
+            Inactive = "0" means that the site is ACTIVE.
+            Inactive = "1" means that the site is INACTIVE.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Site.DefaultOnly">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SiteClass">
+            <summary>
+            Class to handle site classes.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteClass.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteClass.FindSiteClassByCode(System.String)">
+            <summary>
+            Predicate used to find a SiteClass based on the site class code
+            </summary>
+            <param name="siteClassCode">The code.</param>
+            <returns>The Matched SiteClass, if found or NULL, if not.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClass.SiteClassName">
+            <summary>
+            Site class name. Corresponds to the the "SiteClass" XML tag.
+            (Add "SiteClass" for default only functionality.)
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClass.SiteClassCode">
+            <summary>
+            Site class code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClass.NoTrailer">
+            <summary>
+            no trailer
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClass.DropShunt">
+            <summary>
+            drop shunt
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClass.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.SiteClassCode">
+            <summary>
+            The site code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.VehicleClassCode">
+            <summary>
+            The vehicle class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.Wait_Time">
+            <summary>
+            The waiting time.
+            XML Tag: Wait_Time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.Time_Vol">
+            <summary>
+            The time per volume
+            XML Tag: Time_Vol
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.Time_Kg">
+            <summary>
+            The time per mass
+            XML Tag: Time_Kg
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.Time_Unit">
+            <summary>
+            The time per unit
+            XML Tag: Time_Unit
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.Time_Unit2">
+            <summary>
+            The time per unit 2
+            XML Tag: Time_Unit2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.Time_Unit3">
+            <summary>
+            The time per unit 3
+            XML Tag: Time_Unit3
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime.UseLearnedData">
+            <summary>
+            use learned data
+            XML Tag: UseLearnedData
+            "T" = true, "F" = false.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SiteClassVehicleExclusion">
+            <summary>
+            Class to model a site class vehicle exclusion
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteClassVehicleExclusion.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleExclusion.SiteClassCode">
+            <summary>
+            The site class code.
+            Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassVehicleExclusion.VehicleClassCode">
+            <summary>
+            the vehicle class code
+             Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SiteClassWindow">
+            <summary>
+            Class to model a site class window
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteClassWindow.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.ClassWindowCode">
+            <summary>
+            The Class window code.
+            Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.SiteClassCode">
+            <summary>
+            the site code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.DayIndex">
+            <summary>
+            the day index
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.FromTime">
+            <summary>
+            the from time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.ToTime">
+            <summary>
+            The to time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.FinishTime">
+            <summary>
+            The finish time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.FinishBeforeEnd">
+            <summary>
+            The finish before End
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteClassWindow.WindowWeight">
+            <summary>
+            The window weight.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SiteMappoint">
+            <summary>
+            Class to hold site and mappoint information.
+            A wrapper class to ensure that the site and mappoint are imported together.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteMappoint.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteMappoint.FindSiteMappointByCode(System.String)">
+            <summary>
+            Predicate used to find a SiteMappoint based on the code
+            </summary>
+            <param name="code">The code.</param>
+            <returns>The Matched SiteMappoint, if found or NULL, if not.</returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteMappoint.Name">
+            <summary>
+            The Site and Mappoint name.
+            Setting or getting this value automatically populates the following:
+            Site.SiteName
+            Mappoint.Mappointname
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteMappoint.Code">
+            <summary>
+            The Site and Mappoint code. Must be unique.
+            Setting or getting this value automatically populates the following:
+            Site.SiteCode
+            Site.MappointCode
+            Mappoint.MPCode
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteMappoint.Site">
+            <summary>
+            The site associated with this Site Mappoint.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteMappoint.Mappoint">
+            <summary>
+            The mappoint associated with this Site Mappoint.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes">
+            <summary>
+            Class to model the times per site for each vehicle class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.SiteCode">
+            <summary>
+            The site code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.VehicleClassCode">
+            <summary>
+            The vehicle class code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.TimeWait">
+            <summary>
+            The waiting time.
+            XML Tag: Wait_Time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.TimeVolumne">
+            <summary>
+            The time per volume
+            XML Tag: Time_Vol
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.TimeMass">
+            <summary>
+            The time per mass
+            XML Tag: Time_Kg
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.TimeUnit">
+            <summary>
+            The time per unit
+            XML Tag: Time_Unit
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.TimeUnit2">
+            <summary>
+            The time per unit 2
+            XML Tag: Time_Unit2
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.TimeUnit3">
+            <summary>
+            The time per unit 3
+            XML Tag: Time_Unit3
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteVehicleClassTimes.UseLearnedData">
+            <summary>
+            use learned data
+            XML Tag: UseLearnedData
+            "T" = true, "F" = false.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SiteWindow">
+            <summary>
+            Class to model a site window
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SiteWindow.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.WindowCode">
+            <summary>
+            The window code.
+            Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.SiteCode">
+            <summary>
+            the site code
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.DayIndex">
+            <summary>
+            the day index
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.FromTime">
+            <summary>
+            the from time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.ToTime">
+            <summary>
+            The to time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.FinishTime">
+            <summary>
+            The finish time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.FinishBeforeEnd">
+            <summary>
+            The finish before End
+            Use "T" for true, "F" for false
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SiteWindow.WindowWeight">
+            <summary>
+            The window weight.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.SlotRequest">
+            <summary>
+            PLATO Slot Booking request.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SlotRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OPSI.Data.PLATO.Objects.SlotRequest"/> class.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SlotRequest.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.SlotRequest.FromString(System.String)">
+            <summary>
+            Returns SlotRequest instance from the Xml string.
+            </summary>
+            <param name="s">The s.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.RequestType">
+            <summary>
+            Valid values are:
+            Initial
+            Confirm
+            </summary>
+            <value>
+            The type of the request.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.BookingCode">
+            <summary>
+            Gets or sets the booking code.
+            </summary>
+            <value>
+            The booking code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.JobCode">
+            <summary>
+            Gets or sets the job code.
+            </summary>
+            <value>
+            The job code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ActTripCode">
+            <summary>
+            Gets or sets the act trip code.
+            </summary>
+            <value>
+            The act trip code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromSiteCode">
+            <summary>
+            Gets or sets from site code.
+            </summary>
+            <value>
+            From site code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToSiteCode">
+            <summary>
+            Gets or sets to site code.
+            </summary>
+            <value>
+            To site code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.Source">
+            <summary>
+            Gets or sets the source.
+            </summary>
+            <value>
+            The source.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.Detail">
+            <summary>
+            Gets or sets the detail.
+            </summary>
+            <value>
+            The detail.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.SpecialInstructions">
+            <summary>
+            Gets or sets the special instructions.
+            </summary>
+            <value>
+            The special instructions.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromWindowFrom">
+            <summary>
+            Gets or sets from window from.
+            </summary>
+            <value>
+            From window from.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromWindowFromXml">
+            <summary>
+            Gets or sets from window from (for Xml serialization).
+            </summary>
+            <value>
+            From window from XML.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromWindowFromSpecified">
+            <summary>
+            Gets a value indicating whether from window from is specified.
+            </summary>
+            <value>
+            <c>true</c> if from window from is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromWindowFinish">
+            <summary>
+            Gets or sets from window finish.
+            </summary>
+            <value>
+            From window finish.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromWindowFinishXml">
+            <summary>
+            Gets or sets from window finish (for Xml serialization).
+            </summary>
+            <value>
+            From window finish XML.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FromWindowFinishSpecified">
+            <summary>
+            Gets a value indicating whether from window finish is specified.
+            </summary>
+            <value>
+            <c>true</c> if from window finish is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToWindowFrom">
+            <summary>
+            Gets or sets to window from.
+            </summary>
+            <value>
+            To window from.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToWindowFromXml">
+            <summary>
+            Gets or sets to window from (for Xml serialization).
+            </summary>
+            <value>
+            To window from XML.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToWindowFromSpecified">
+            <summary>
+            Gets a value indicating whether to window from is specified.
+            </summary>
+            <value>
+            <c>true</c> if to window from is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToWindowFinish">
+            <summary>
+            Gets or sets to window finish.
+            </summary>
+            <value>
+            To window finish.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToWindowFinishXml">
+            <summary>
+            Gets or sets to window finish (for Xml serialization).
+            </summary>
+            <value>
+            To window finish XML.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.ToWindowFinishSpecified">
+            <summary>
+            Gets a value indicating whether to window finish is specified.
+            </summary>
+            <value>
+            <c>true</c> if to window finish is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.TimeToHold">
+            <summary>
+            Gets or sets the time to hold.
+            </summary>
+            <value>
+            The time to hold.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.TimeToHoldSpecified">
+            <summary>
+            Gets a value indicating whether the time to hold is specified.
+            </summary>
+            <value>
+            <c>true</c> if the time to hold is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FleetCode">
+            <summary>
+            Gets or sets the fleet code.
+            </summary>
+            <value>
+            The fleet code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.VehicleClassCode">
+            <summary>
+            Gets or sets the vehicle class code.
+            </summary>
+            <value>
+            The vehicle class code.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.LineItems">
+            <summary>
+            Gets or sets the line items.
+            </summary>
+            <value>
+            The line items.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.RequestTypeInitial">
+            <summary>
+            Gets the request type initial.
+            </summary>
+            <value>
+            The request type initial.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.RequestTypeConfirm">
+            <summary>
+            Gets the request type confirm.
+            </summary>
+            <value>
+            The request type confirm.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.SlotRequest.FormatWindowDateTime">
+            <summary>
+            Gets the format string specifier used for date time windows.
+            </summary>
+            <value>
+            The format window date time.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.RequestTypeEnum">
+            <summary>
+            Request Type enumeration
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.RequestTypeEnum.Initial">
+            <summary>
+            Initial (temporary) slot booking.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.RequestTypeEnum.Confirm">
+            <summary>
+            Confirmed slot booking.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Staff">
+            <summary>
+            Class to hold staff information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Staff.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.StaffCode">
+            <summary>
+            Staff code. Used as external link.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.StaffName">
+            <summary>
+            Name of the staff member.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.MPCode">
+            <summary>
+            Mappoint code for this staff member.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.HourlyRate">
+            <summary>
+            The Hourly rate for this staff member.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.OvertimeRate">
+            <summary>
+            The Overtime rate for this staff member.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.SleepoutCost">
+            <summary>
+            The Sleep out cost for this staff member.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.Inactivated">
+            <summary>
+            If the staff member is active or not.
+            Inactivated = "0" means that the staff member is ACTIVE.
+            Inactivated = "1" means that the staff member is INACTIVE.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.IsDriver">
+            <summary>
+            If the staff member is a driver or not.
+            IsDriver = "0" means that the staff member is not a driver.
+            IsDriver = "1" means that the staff member is a driver.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Staff.LicenceCode">
+            <summary>
+            The Licence code for this staff member.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.StandardTravelTime">
+            <summary>
+            Class to model a standard travel time in Plato.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.StandardTravelTime.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.StandardTravelTime.FromMPID">
+            <summary>
+            The source mappoint id.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.StandardTravelTime.ToMPID">
+            <summary>
+            The destination mappoint id.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.StandardTravelTime.Cost">
+            <summary>
+            The cost of this leg.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.StandardTravelTime.Distance">
+            <summary>
+            The distance of this leg.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.StandardTravelTime.TravelTime">
+            <summary>
+            The time to travel this leg.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Target">
+            <summary>
+            Class to handle target information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Target.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Target.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Target.FromString(System.String)">
+            <summary>
+            Returns Target instance from the Xml string.
+            </summary>
+            <param name="o">The o.</param>
+            <returns></returns>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.TargetCode">
+            <summary>
+            The Target code, corresponds the XML "Target" tag of Target.
+            Used to identify the target on a line item.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.TargetCodeSpecified">
+            <summary>
+            Gets a value indicating whether the target code is specified.
+            </summary>
+            <value>
+              <c>true</c> if the target code is specified; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.MustGo">
+            <summary>
+            Quantity that must go.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.CanGo">
+            <summary>
+            Qunatity that can go.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.QuantityScheduled">
+            <summary>
+            Scheduled quantity.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.QuantityCompleted">
+            <summary>
+            Completed quantity.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.TargetFrom">
+            <summary>
+            The from datetime of the target.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Target.TargetTo">
+            <summary>
+            The to datetime of the target.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.TripUpdate">
+            <summary>
+            Class to model a trip update.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.TripUpdate.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.TripUpdate.TripID">
+            <summary>
+            the trip ID.
+            This property has to be specified.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.TripUpdate.TripUpdateFunction">
+            <summary>
+            the trip update function.
+            This property has to be specified.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.TripUpdate.ActTripCode">
+            <summary>
+            Gets or sets the act trip code.
+            </summary>
+            <value>
+            The act trip code.
+            </value>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.TripUpdate.Function">
+            <summary>
+            the functions that can be called for this trip.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.TripUpdate.Function.LockTrip">
+            <summary>
+            Lock the trip.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.TripUpdate.Function.UnlockTrip">
+            <summary>
+            Unlock the trip.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.TripUpdate.Function.DispatchAll">
+            <summary>
+            Indicates the truck has left the depot.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.Objects.TripUpdate.Function.ReceiveAll">
+            <summary>
+            Indicates the customer has received the delivery.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.Vehicle">
+            <summary>
+            Class to hold vehicle information.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.Vehicle.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.DefaultOnlyList">
+            <summary>
+            The list of properties that are to be default only.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.VehicleCode">
+            <summary>
+            Vehicle code. Used as external link.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.VehicleName">
+            <summary>
+            Unique identifier in Plato.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.VehicleClassCode">
+            <summary>
+            Vehicle class code.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.FleetCode">
+            <summary>
+            Code of the fleet this vehicle belongs to.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.VehicleMapPointCode">
+            <summary>
+            ID of the Map point that this vehicle is linked to.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.Available">
+            <summary>
+            If the vehicle is available or not.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.Inactivated">
+            <summary>
+            If the vehicle is active or not.
+            Inactivated = "0" means that the staff member is ACTIVE.
+            Inactivated = "1" means that the staff member is INACTIVE.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.CoreFleet">
+            <summary>
+            If the vehicle is part of the core fleet or not.
+            CoreFleet = "0" means that the vehicle is not part of the core fleet.
+            CoreFleet = "1" means that the vehicle is part of the core fleet.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.Make">
+            <summary>
+            The make of the vehicle
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.Model">
+            <summary>
+            The model of the vehicle
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.EngineNumber">
+            <summary>
+            The engine number.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.ChassisNumber">
+            <summary>
+            The chassis number.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.RegistrationRenewal">
+            <summary>
+            Date when the registration needs to renewed.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.HardwareID">
+            <summary>
+            The ID of the GPS hardware unit in the vehicle.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.Odometer">
+            <summary>
+            The odometer reading of the vehicle.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.BlockedFrom">
+            <summary>
+            Datetime the vehicle is blocked or unavailable from.
+            NULL if no datetime is specified.
+            Not used for XML import.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.Vehicle.BlockedTo">
+            <summary>
+            Datetime the vehicle is blocked or unavailable to.
+            NULL if no datetime is specified.
+            Not used for XML import.
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.Objects.VehicleClass">
+            <summary>
+            Class to hold vehicle class information.
+            Minimum needs a vehicle class code.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.Objects.VehicleClass.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.VehicleClassName">
+            <summary>
+            Name of the vehicle class.
+            XML Tag: VehicleClass
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.VehicleClassCode">
+            <summary>
+            Vehicle class code.
+            Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.ClassType">
+            <summary>
+            Vehicle class type.
+            Enumerated Type in Plato.
+            1 = Vehicle/Horse
+            3 = Trailer
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.TowingLoad">
+            <summary>
+            The towing load
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.MaxTrailers">
+            <summary>
+            The maximum number of trailers
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.Weight">
+            <summary>
+            The weight
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.HitchingTime">
+            <summary>
+            The hitching time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.UnhitchingTime">
+            <summary>
+            The unhitching time
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.FixedDayCost">
+            <summary>
+            The fixed day cost
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.RunningCost">
+            <summary>
+            The running cost
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.HourlyRate">
+            <summary>
+            The hourly rate
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.LoadedRunningCost">
+            <summary>
+            the loaded running cost
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.SleepoutCost">
+            <summary>
+            the sleep out cost
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.OvertimeRate">
+            <summary>
+            the over time rate
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.NormalRateHours">
+            <summary>
+            The normal rate hours
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.MaxDuty">
+            <summary>
+            The max duty
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.MaxDrive">
+            <summary>
+            The max Drive
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.MinCycle">
+            <summary>
+            The min cycle
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.BreakFrequency">
+            <summary>
+            The break frequency
+            XML Tag: BreakFreq
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.BreakLength">
+            <summary>
+            The Break length
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.MinSleep">
+            <summary>
+            The min sleep
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.HighwaySpeed">
+            <summary>
+            The highway speed
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleClass.PackingFactor">
+            <summary>
+            The packing factor
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleSectionProductExclusion.VehicleClassCode">
+            <summary>
+            The VehicleClassCode.
+            Minimum property required. Without this property, the xml will not be generated.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleSectionProductExclusion.Section">
+            <summary>
+            the Section
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.Objects.VehicleSectionProductExclusion.ProductClassCode">
+            <summary>
+            the ProductClassCode
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.PLATO.PLATOXmlGeneration">
+            <summary>
+            Class to generate XML for importing into PLATO.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.PLATOXmlGeneration.PLATODateTimeXmlFormat">
+            <summary>
+            The String format of a DateTime.
+            Plato accepts this format in XML.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.#ctor(System.Boolean,System.Int32)">
+            <summary>
+            Default Constructor.
+            </summary>
+            <param name="useBatching">If batching is to be used or not.</param>
+            <param name="batchLimit">
+            It UseBatching is true, and BatchLimit is 0, then each batch will be the size of the list of objects in that batch.
+            Different lists will be in different batches.
+            If UseBatching is true, and BatchLimit is not 0, then the batches will be the size of BatchLimit.
+            If UseBatching is false, BatchLimit is ignored, and the single batch returned will have of all the
+            objects in all the lists.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlImport(System.Object)">
+            <summary>
+            Create an Xml Import string for a single object.
+            </summary>
+            <param name="importObject">The object to import.
+            The object must be a List with objects from namespace OPSI.Data.PLATO.</param>
+            <returns>The Xml String of the object.</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlImport(System.Object[])">
+            <summary>
+            Create an Xml Import string of different object types.
+            </summary>
+            <param name="importObjects">The objects to import.
+            Each element in the array must be a List with objects from namespace OPSI.Data.PLATO.</param>
+            <returns>The Xml String for the lists.</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlImport(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Product})">
+            <summary>
+            Create an Xml import string of Products.
+            </summary>
+            <param name="Products">The products to import.</param>
+            <returns>The Xml String for products.</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlImport(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Vehicle},System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Fleet})">
+            <summary>
+            Create an Xml import string for vehicles and fleets.
+            </summary>
+            <param name="Vehicles">The vehicles to import.</param>
+            <param name="Fleets">The fleets to import.</param>
+            <returns>The Xml String for vehicles and fleets.</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlImport(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Job})">
+            <summary>
+            Create an XML Import of jobs.
+            </summary>
+            <param name="Jobs">The Jobs to import</param>
+            <returns>The Xml String for jobs</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlImport(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Job},System.Collections.Generic.List{OPSI.Data.PLATO.Objects.ScheduleJob})">
+            <summary>
+            Create an XML Import of jobs and scheduled jobs.
+            </summary>
+            <param name="Jobs">The Jobs to import</param>
+            <param name="ScheduledJobs">The Scheduled Jobs to import</param>
+            <returns>The Xml String for jobs and scheduled jobs</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateDeleteImportXml(OPSI.Data.PLATO.Objects.DeleteImport)">
+            <summary>
+            Create an XML import to cancel a job.
+            </summary>
+            <param name="deleteImport">The delete import.</param>
+            <returns></returns>
+        </member>
+        <member name="F:OPSI.Data.PLATO.PLATOXmlGeneration.logger">
+            <summary>
+            NLog logger.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.PLATOXmlGeneration.masterDataDocumentRoot">
+            <summary>
+            Xml root called Import. Holds the last Xml document created
+            by calling CreateXmlImport(). Else null if the method has not been called.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.PLATOXmlGeneration.currentEntry">
+            <summary>
+            The current entry in the batch.
+            </summary>
+        </member>
+        <member name="F:OPSI.Data.PLATO.PLATOXmlGeneration.singleBatchPerList">
+            <summary>
+            If batching is enabled, but an invalid (less than 0) number is given as
+            a batch limit, then each list of objects is sorted into their own batch.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.InitialiseImportDocumentTags">
+            <summary>
+            Initialise the import, by naming the root document.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.IncreaseBatchLimit(System.Int32)">
+            <summary>
+            Increase the batch limit if not using batching.
+            Set the batch limit if using batching and it has not been set yet.
+            </summary>
+            <param name="limit">The limit to increase the batch by.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.UpdateBatchStatus">
+            <summary>
+            Update the current batch status.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CheckIfBatchFinished">
+            <summary>
+            Check if the current batch is finished.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CloseBatch">
+            <summary>
+            Close the current batch and add the XML string to the list of strings.
+            Restart the XML Document.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateJobImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Job})">
+            <summary>
+            Create Xml for a job import.
+            </summary>
+            <param name="jobs">The jobs.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateScheduledJobImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.ScheduleJob})">
+            <summary>
+            Create Xml for a scheduled job import.
+            </summary>
+            <param name="scheduleJobs">The scheduled jobs.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateCancelledJobImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.CancelledJob})">
+            <summary>
+            Create the cancelled job Import xml.
+            </summary>
+            <param name="cancelledJobs"></param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateFleetImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Fleet})">
+            <summary>
+            Create Xml for a fleet import.
+            </summary>
+            <param name="fleets"></param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateVehicleImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Vehicle})">
+            <summary>
+            Create Xml for a vehicle import.
+            </summary>
+            <param name="vehicles">The list of vehicles.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateVehicleClassImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.VehicleClass})">
+            <summary>
+            Create Xml for a vehicle classes import.
+            </summary>
+            <param name="vehicleClasses">The list of vehicle classes.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateCompartmentImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Compartment})">
+            <summary>
+            Create Xml for a list of compartments.
+            </summary>
+            <param name="compartments">The list of compartments.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSectionImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Section})">
+            <summary>
+            Create Xml for a list of sections
+            </summary>
+            <param name="sections">The list of sections.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateStaffImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Staff})">
+            <summary>
+            Create Xml for a staff import.
+            </summary>
+            <param name="staff">The list of staff.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateClientImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Client})">
+            <summary>
+            Create Xml for a Client import.
+            </summary>
+            <param name="clients">The list of Clients.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateProductImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Product})">
+            <summary>
+            Create the XML for product import.
+            </summary>
+            <param name="products">The List of Products</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateProductClassImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.ProductClass})">
+            <summary>
+            Create the XML for product class import.
+            </summary>
+            <param name="productClasses">The list of product classes.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateMappointImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Mappoint})">
+            <summary>
+            Create the XML for mappoints import.
+            </summary>
+            <param name="mappoints">The list of mappoints.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateMappointClassImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.MappointClass})">
+            <summary>
+            Create the XML for mappoint classes import.
+            </summary>
+            <param name="mappointClasses">The list of mappoint classes.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.Site})">
+            <summary>
+            Create the XML for sites import.
+            </summary>
+            <param name="sites">The list of sites.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteWindowImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteWindow})">
+            <summary>
+            Create the XML for site windows import.
+            </summary>
+            <param name="siteWindows">The list of site windows.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteClassesImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteClass})">
+            <summary>
+            Create the XML for site classes import.
+            </summary>
+            <param name="siteClasses">The list of site classes.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteClassWindowImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteClassWindow})">
+            <summary>
+            Create the XML for site class windows import.
+            </summary>
+            <param name="siteClassWindows">The list of site class windows.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteClassVehicleExclusionImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteClassVehicleExclusion})">
+            <summary>
+            Create the XML for site class vehicle exclusions import.
+            </summary>
+            <param name="siteClassVehicleExclusions">The list of site class vehicle exclusions.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteMappointImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteMappoint})">
+            <summary>
+            Create the XML for SitesMappoints import.
+            </summary>
+            <param name="siteMappoints">The list of SiteMappoints.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteVehicleClassTimesImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteVehicleClassTimes})">
+            <summary>
+            Create the XML for siteVehicleClassTimes import.
+            </summary>
+            <param name="siteVehicleClassTimes">The list of siteVehicleClassTimes.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteClassVehicleClassTimesImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SiteClassVehicleClassTime})">
+            <summary>
+            Create the XML for SiteClassVehicleClassTime import.
+            </summary>
+            <param name="SiteClassVehicleClassTime">The list of SiteClassVehicleClassTime.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSchedulerRunImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.SchedulerRun})">
+            <summary>
+            Create the Xml for the scheduler run import
+            </summary>
+            <param name="schedulerRuns"></param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateTripUpdateImportXml(System.Collections.Generic.List{OPSI.Data.PLATO.Objects.TripUpdate})">
+            <summary>
+            Create the Xml for the update trip import
+            </summary>
+            <param name="tripUpdates"></param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlElement(System.String,System.String,System.Boolean)">
+            <summary>
+            Create and return an XML Element.
+            </summary>
+            <param name="tagName">The tag name for the XML Element.</param>
+            <param name="tagContents">The string contents of the tag.</param>
+            <param name="isDefaultOnly">True if the attribute defaultOnly must be applied to this tag.</param>
+            <returns>A XML Element.</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateXmlElement(System.String,System.Nullable{System.Double},System.Boolean)">
+            <summary>
+            Create and return an XML Element.
+            </summary>
+            <param name="tagName">The tag name for the XML Element.</param>
+            <param name="tagContents">The contents of the tag as a double.</param>
+            <param name="isDefaultOnly">True if the attribute defaultOnly must be applied to this tag.</param>
+            <returns>A XML Element.</returns>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateSiteXml(OPSI.Data.PLATO.Objects.Site)">
+            <summary>
+            Create the XML for a single site.
+            </summary>
+            <param name="currentSite">The Current site.</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.CreateMappointXml(OPSI.Data.PLATO.Objects.Mappoint)">
+            <summary>
+            Create the XML for a single mappoint.
+            </summary>
+            <param name="currentMappoint">The Current mappoint</param>
+        </member>
+        <member name="M:OPSI.Data.PLATO.PLATOXmlGeneration.AddFragmentToMasterDocument(System.String)">
+            <summary>
+            Adds a fragment (string) to the master document.
+            </summary>
+            <param name="xmlString"></param>
+        </member>
+        <member name="P:OPSI.Data.PLATO.PLATOXmlGeneration.UseBatching">
+            <summary>
+            True if batching is to be used.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.PLATOXmlGeneration.BatchLimit">
+            <summary>
+            The limit of the number of entries (of any object type) in an import batch.
+            If this is not set, but batching is enabled, then the size of the list of
+            objects to be batched will dicate the size of the batch.
+            For example: If the batch limit is 13 and the number of products to be
+            batched is 2000, then 154 xml strings will be returned.
+            </summary>
+        </member>
+        <member name="P:OPSI.Data.PLATO.PLATOXmlGeneration.XmlStrings">
+            <summary>
+            A list of xml strings
+            </summary>
+        </member>
+        <member name="T:OPSI.Data.Util.XmlUtil">
+            <summary>
+            Helper class to manipulate Xml.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.Util.XmlUtil.FromString``1(System.String)">
+            <summary>
+            Returns object of type T from the deserialized string.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xml">The XML.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">Xml string is null.</exception>
+        </member>
+        <member name="M:OPSI.Data.Util.XmlUtil.ToString``1(``0)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="o">The o.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">Object is null.</exception>
+        </member>
+        <member name="T:OPSI.Data.XmlMethods">
+            <summary>
+            A collection of xml helper methods.
+            </summary>
+        </member>
+        <member name="M:OPSI.Data.XmlMethods.CreateXmlElement(System.Xml.XmlDocument,System.String,System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            Create and return an XML Element.
+            </summary>
+            <param name="root">The xml document this element belongs to.</param>
+            <param name="tagName">The tag name for the XML Element.</param>
+            <param name="tagContents">The bool? contents of the tag.</param>
+            <param name="isDefaultOnly">True if the attribute defaultOnly must be applied to this tag.</param>
+            <returns>A XML Element.</returns>
+        </member>
+        <member name="M:OPSI.Data.XmlMethods.CreateXmlElement(System.Xml.XmlDocument,System.String,System.String,System.Boolean)">
+            <summary>
+            Create and return an XML Element.
+            </summary>
+            <param name="root">The xml document this element belongs to.</param>
+            <param name="tagName">The tag name for the XML Element.</param>
+            <param name="tagContents">The string contents of the tag.</param>
+            <param name="isDefaultOnly">True if the attribute defaultOnly must be applied to this tag.</param>
+            <returns>A XML Element.</returns>
+        </member>
+        <member name="M:OPSI.Data.XmlMethods.CreateXmlElement(System.Xml.XmlDocument,System.String,System.Nullable{System.Double},System.Boolean)">
+            <summary>
+            Create and return an XML Element.
+            </summary>
+            <param name="root">The xml document this element belongs to.</param>
+            <param name="tagName">The tag name for the XML Element.</param>
+            <param name="tagContents">The contents of the tag as a double.</param>
+            <param name="isDefaultOnly">True if the attribute defaultOnly must be applied to this tag.</param>
+            <returns>A XML Element.</returns>
+        </member>
+        <member name="M:OPSI.Data.XmlMethods.FormatAsOPSIString(System.Nullable{System.Boolean})">
+            <summary>
+            Format a boolean value as an OPSI String.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OPSI.Data.XmlMethods.SetElementDefaultOnly(System.Xml.XmlDocument,System.Xml.XmlElement,System.Boolean)">
+            <summary>
+            Set if an element is default only.
+            </summary>
+            <param name="root"></param>
+            <param name="ele"></param>
+            <param name="isDefaultOnly"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id = "WindowsServiceDir">
+      <Component Id ="File_Distributor" Guid ="{D138601A-8E31-4C5D-8B74-0307248FE10F}"
+                 SharedDllRefCount ='no' NeverOverwrite='no' Permanent='no' Transitive='no'  Win64='no'>
+        <File Id="File_Distributor" Source="$(var.File_Distributor.TargetDir)$(var.File_Distributor.TargetFileName)"
+                KeyPath='yes' ReadOnly='no' Vital='yes' Hidden='no' System='no'
+                Checksum='no' />
+        <ServiceInstall Id='WindowsServiceInstall'
+                        DisplayName='File_Distributor'
+                        Description='Service to File Transfers, emails, DB Backups and sending to AmazonS3.'
+                        Name='File_Distributor'
+                        ErrorControl='normal'
+                        Start='auto'
+                        Type='ownProcess'
+                        Vital='yes'
+                        Account='LocalSystem'/>
+        <ServiceControl Id='WebServiceControl' Name='File_Distributor Windows Service Adapter'
+                        Stop='both'
+                        Remove='uninstall' />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id ="IKEAStatus.WindowsService.Binaries">
+      <ComponentRef Id ="IKEAStatus.WindowsService"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPSI.FileHandler</name>
+    </assembly>
+    <members>
+        <member name="T:OPSI.FileHandling.DataFile">
+            <summary>
+            Class to represent a plain text data file.
+            It stores each line of the files in a list of Strings,
+            and the filename of the file.
+            </summary>
+        </member>
+        <member name="M:OPSI.FileHandling.DataFile.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:OPSI.FileHandling.DataFile.Filename">
+            <summary>
+            The name of this file.
+            </summary>
+        </member>
+        <member name="P:OPSI.FileHandling.DataFile.Data">
+            <summary>
+            A list of each line (as a string) in the file.
+            </summary>
+        </member>
+        <member name="T:OPSI.FileHandling.FieldConditionDateTime">
+            <summary>
+            Specifies on what datetime field a file should be filtered on.
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FieldConditionDateTime.ModifiedBeforeDateTime">
+            <summary>
+            Modified before this date
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FieldConditionDateTime.ModifiedAfterDateTime">
+            <summary>
+            Modified after this date
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FieldConditionDateTime.CreatedBeforeDateTime">
+            <summary>
+            Created before this date
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FieldConditionDateTime.CreatedAfterDateTime">
+            <summary>
+            Created after this date
+            </summary>
+        </member>
+        <member name="T:OPSI.FileHandling.FilenameAddition">
+            <summary>
+            Specifies if the file should be renamed with a Prefix or a Suffix
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FilenameAddition.Prefix">
+            <summary>
+            Add a prefix.
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FilenameAddition.Suffix">
+            <summary>
+            Add a suffix.
+            </summary>
+        </member>
+        <member name="T:OPSI.FileHandling.FileHandler">
+            <summary>
+            Class which manages basic File operations (movement, deletion, renaming etc)
+            for any files.
+            </summary>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFileData(System.String,System.String,System.String)">
+            <summary>
+            Get data from a file or multiple files.
+            </summary>
+            <param name="Dir">The Directory.</param>
+            <param name="Filename">The filename to filter on, 
+            or the exact filename of the file. Use "*" to get all filenames.</param>
+            <param name="Extension">The extension of the file. Use * to get all extensions. </param>
+            <returns>A list of Strings, each a line of data, from the files.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFileData(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get data from a file or multiple files.
+            </summary>
+            <param name="Filenames">A list of filenames to get data from.</param>
+            <returns>A list of Strings, each a line of data, from the files.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFileData(System.String[])">
+            <summary>
+            Get data from a file or multiple files.
+            </summary>
+            <param name="Filenames">An array of filenames to get data from.</param>
+            <returns>A list of Strings, each a line of data, from the files.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFileData(System.String)">
+            <summary>
+            Get data from a single file.
+            </summary>
+            <param name="Filename">The exact name of the file (including path and extension).</param>
+            <returns>A list of Strings, each a line of data from this file.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.ReadFileData(System.String[])">
+            <summary>
+            Reads the data, line by line, from a list of files and adds 
+            it to a List.
+            </summary>
+            <param name="Files">The filenames of the files to be read.</param>
+            <returns>The data from the files, each element is a line from a file.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFiles(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Gets all files in a directory.
+            </summary>
+            <param name="directory">The directory. Use "" to use the current working directory.</param>
+            <param name="filename">The filename to filter on. Use * to get all files.</param>
+            <param name="extension">The extension of the file. Use * to get all extensions.</param>
+            <param name="filenameOnly">True if you only want the filename, not the full path, returned.</param>
+            <exception cref="T:System.IO.DirectoryNotFoundException"></exception>
+            <exception cref="T:System.NullReferenceException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <returns>An array of filenames.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFilesCreatedAfterDateTime(System.String,System.String,System.String,System.Boolean,System.DateTime)">
+            <summary>
+            Get all files from this directory with this filename, extension, and are created after this datetime.
+            </summary>
+            <param name="directory">The directory. Use "" to use the current working directory.</param>
+            <param name="filename">The filename to filter on. Use * to get all files.</param>
+            <param name="extension">The extension of the file. Use * to get all extensions.</param>
+            <param name="filenameOnly">True if you only want the filename, not the full path, returned.</param>
+            <param name="createdDateTime"></param>
+            <returns>A list of files matching these criteria.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFilesCreatedBeforeDateTime(System.String,System.String,System.String,System.Boolean,System.DateTime)">
+            <summary>
+            Get all files from this directory with this filename, extension, and are created before this datetime.
+            </summary>
+            <param name="directory">The directory. Use "" to use the current working directory.</param>
+            <param name="filename">The filename to filter on. Use * to get all files.</param>
+            <param name="extension">The extension of the file. Use * to get all extensions.</param>
+            <param name="filenameOnly">True if you only want the filename, not the full path, returned.</param>
+            <param name="createdDateTime"></param>
+            <returns>A list of files matching these criteria.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFilesModifiedBeforeDateTime(System.String,System.String,System.String,System.Boolean,System.DateTime)">
+            <summary>
+            Get all files from this directory with this filename, extension, and are modified before this datetime.
+            </summary>
+            <param name="directory">The directory. Use "" to use the current working directory.</param>
+            <param name="filename">The filename to filter on. Use * to get all files.</param>
+            <param name="extension">The extension of the file. Use * to get all extensions.</param>
+            <param name="filenameOnly">True if you only want the filename, not the full path, returned.</param>
+            <param name="modifiedDateTime"></param>
+            <returns>A list of files matching these criteria.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFilesModifiedAfterDateTime(System.String,System.String,System.String,System.Boolean,System.DateTime)">
+            <summary>
+            Get all files from this directory with this filename, extension, and are modified after this datetime.
+            </summary>
+            <param name="directory">The directory. Use "" to use the current working directory.</param>
+            <param name="filename">The filename to filter on. Use * to get all files.</param>
+            <param name="extension">The extension of the file. Use * to get all extensions.</param>
+            <param name="filenameOnly">True if you only want the filename, not the full path, returned.</param>
+            <param name="modifiedDateTime"></param>
+            <returns>A list of files matching these criteria.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Moves a given list of files to the destination directory.
+            The destination directory will be created if needed.
+            The List of Files must contain full, NOT relative, paths to the files.
+            </summary>
+            <param name="Files">The files to move.</param>
+            <param name="Destination">The destination directory. If it does not exist, it is created.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.String[],System.String)">
+            <summary>
+            Moves a given list of files to the destination directory.
+            The destination directory will be created if needed.
+            The array of Files must contain full, NOT relative, paths to the files.
+            </summary>
+            <param name="Files">The files to move.</param>
+            <param name="Destination">The destination directory. If it does not exist, it is created.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            Moves a given list of files from the source directory to 
+            the destination directory.
+            The destination directory will be created if needed.
+            If the source parameter is "", it is assumed that Files contains
+            full, NOT relative, paths to the files.
+            </summary>
+            <param name="Files">The files to move.</param>
+            <param name="Source">The source directory. Can be "" if Files contains
+            full, NOT relative, paths to the files.</param>
+            <param name="Destination">The destination directory. If it does not exist, it is created.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.String[],System.String,System.String)">
+            <summary>
+            Moves a given list of files from the source directory to 
+            the destination directory.
+            The destination directory will be created if needed.
+            If the source parameter is "" or null, it is assumed that Files contains
+            full, NOT relative, paths to the files.
+            </summary>
+            <param name="Files">The files to move.</param>
+            <param name="Source">The source directory. Can be null or "" if Files contains
+            full, NOT relative, paths to the files.</param>
+            <param name="Destination">The destination directory. If it does not exist, it is created.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Moves all files matching the filename and extension from the source directory 
+            to the destination directory.
+            The destination directory will be created if needed.
+            </summary>
+            <param name="filename">The filename to filter on.
+            (Used as the prefix of the filename. Or give full file name if known. Use * to get all files.)</param>
+            <param name="extension">File name extension.
+            (Leave as "" if full filename is known. Use * to select all file extensions.)</param>
+            <param name="source">The source directory.</param>
+            <param name="destination">The destination directory.</param>
+            <param name="exactMatch">If false, wildcard search is performed on the filename.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.String,System.String)">
+            <summary>
+            Move a single file from one filename to a new filename.
+            The full path must be provided for both filenames, or 
+            else the working directory is assumed.
+            </summary>
+            <param name="oldFilename">The old filename.</param>
+            <param name="newFilename">The new filename.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Move a list of old filenames to a new list of filenames.
+            The two lists must be the same size or else an exception is throw.
+            The full path must be provided for both filenames, or 
+            else the working directory is assumed.
+            </summary>
+            <param name="oldFileNames">The list of oldfilenames.</param>
+            <param name="newFilenames">The list of newfilenames.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveFiles(System.String[],System.String[])">
+            <summary>
+            Move an array of old filenames to a new array of filenames.
+            The two arrays must be the same size or else an exception is throw.
+            The full path must be provided for both filenames, or 
+            else the working directory is assumed.
+            </summary>
+            <param name="oldFilenames">The array of oldfilenames.</param>
+            <param name="newFilenames">The array of newfilenames.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.CopyFiles(System.Collections.Generic.List{System.String},System.String,System.String,System.Boolean)">
+            <summary>
+            Copies all files matching the filename and extension from the source directory 
+            to the destination directory. 
+            The source directory is unchanged.
+            The destination directory will be created if needed.
+            If the source parameter is "" or null, it is assumed that Files contains
+            full, NOT relative, paths to the files.
+            </summary>
+            <param name="Files">The files to move.</param>
+            <param name="Source">The source directory. Can be null or "" if Files contains
+            full, NOT relative, paths to the files.</param>
+            <param name="Destination">The destination directory. If it does not exist, it is created.</param>
+            <param name="Overwrite">True if the destination file with the same name will be overwitten.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.CopyFiles(System.String[],System.String,System.String,System.Boolean)">
+            <summary>
+            Copies all files matching the filename and extension from the source directory 
+            to the destination directory. 
+            The source directory is unchanged.
+            The destination directory will be created if needed.
+            If the source parameter is "" or null, it is assumed that Files contains
+            full, NOT relative, paths to the files.
+            </summary>
+            <param name="Files">The files to move.</param>
+            <param name="Source">The source directory. Can be null or "" if Files contains
+            full, NOT relative, paths to the files.</param>
+            <param name="Destination">The destination directory. If it does not exist, it is created.</param>
+            <param name="Overwrite">True if the destination file with the same name will be overwitten.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.CopyFiles(System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Copies all files matching the filename and extension from the source directory 
+            to the destination directory. 
+            The source directory is unchanged.
+            The destination directory will be created if needed.
+            </summary>
+            <param name="filename">The filename to filter on.
+            (Used as the prefix of the filename. Or give full file name if known. Use * to get all files.)</param>
+            <param name="extension">File name extension.
+            (Leave as "" if full filename is known. Use * to select all file extensions.)</param>
+            <param name="source">The source directory.</param>
+            <param name="destination">The destination directory.</param>
+            <param name="exactMatch">If false, wildcard search is performed on the filename.</param>
+            <param name="overwrite">True if the destination file with the same name will be overwitten.</param>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFiles(System.String[],System.String[])">
+            <summary>
+            Rename the files in OldFilenames to the names in NewFilenames.
+            The two arrays must be the same size or else an exception is throw.
+            The full path must be provided for both filenames, or 
+            else the working directory is assumed.
+            </summary>
+            <param name="oldFilenames">The array of oldfilenames.</param>
+            <param name="newFilenames">The array of newfilenames.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFiles(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Rename a list of old filenames to a new list of filenames.
+            The two lists must be the same size or else an exception is throw.
+            The full path must be provided for both filenames, or 
+            else the working directory is assumed.
+            </summary>
+            <param name="oldFilenames">The list of oldfilenames.</param>
+            <param name="newFilenames">The list of newfilenames.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFiles(System.String,System.String)">
+            <summary>
+            Rename a single file from one filename to a new filename.
+            The full path must be provided for both filenames, or 
+            else the working directory is assumed.
+            </summary>
+            <param name="oldFilename">The old filename.</param>
+            <param name="newFilename">The new filename.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFilesWithPrefix(System.String,System.String)">
+            <summary>
+            Rename a file by adding a Prefix to the filename.
+            </summary>
+            <param name="oldFilename">The old filename.</param>
+            <param name="prefix">The Prefix to add.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFilesWithPrefix(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Rename a list of filenames by adding a Prefix to the filename.
+            </summary>
+            <param name="oldFilenames">The list of old filenames.</param>
+            <param name="prefix">The Prefix to add.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFilesWithPrefix(System.String[],System.String)">
+            <summary>
+            Rename an array of filenames by adding a Prefix to the filename.
+            </summary>
+            <param name="oldFilenames">The array of old filenames.</param>
+            <param name="prefix">The Prefix to add.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFilesWithSuffix(System.String,System.String)">
+            <summary>
+            Rename a file by adding a Suffix to the filename.
+            </summary>
+            <param name="oldFilename">The old filename.</param>
+            <param name="suffix">The Suffix to add.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFilesWithSuffix(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Rename a list of filenames by adding a Suffix to the filename.
+            </summary>
+            <param name="oldFilenames">The list of old filenames.</param>
+            <param name="suffix">The Suffix to add.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFilesWithSuffix(System.String[],System.String)">
+            <summary>
+            Rename an array of filenames by adding a Suffix to the filename.
+            </summary>
+            <param name="oldFilenames">The array of old filenames.</param>
+            <param name="suffix">The Suffix to add.</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.DeleteFiles(System.String)">
+            <summary>
+            Delete a file.
+            </summary>
+            <param name="filename">The file to be deleted.</param>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.DeleteFiles(System.Collections.Generic.List{System.String})">
+            <summary>
+            Delete a list of files.
+            </summary>
+            <param name="files">The list of files.</param>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.DeleteFiles(System.String[])">
+            <summary>
+            Delete an array of files.
+            </summary>
+            <param name="files">The array of files.</param>
+        </member>
+        <member name="F:OPSI.FileHandling.FileHandler.logger">
+            <summary>
+            NLog logger.
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FileHandler.useLogging">
+            <summary>
+            True to use logging.
+            Default is false.
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FileHandler.appendDateTimeToMovedFiles">
+            <summary>
+            True to append the datetime to the end of file names when moving files.
+            Default is false.
+            </summary>
+        </member>
+        <member name="F:OPSI.FileHandling.FileHandler.dateTimeFormat">
+            <summary>
+            The format to use when appending the date time to the end of file names, when moving files.
+            Default is " yyyyMMddHHmmss".
+            If the format provided here is invalid, the default value is used.
+            If the format contains invalid path characters they will be replaced with "".
+            </summary>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.ReadDataFromFile(System.String)">
+            <summary>
+            Reads the data, line by line, from a single file and adds 
+            it to a List.
+            </summary>
+            <param name="filename">The name of the file.</param>
+            <returns>The data from the file.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.GetFilesBasedOnFileDateTime(System.String,System.String,System.String,System.Boolean,System.DateTime,OPSI.FileHandling.FieldConditionDateTime)">
+            <summary>
+            Get files based on directory, filename, extension and 
+            a datetime. 
+            The datetime can be before or after the:
+            Created time
+            Last Modified time
+            Note that the comparison is greater than or less than, equal is not used.
+            </summary>
+            <param name="directory">The directory. Use "" to use the current working directory.</param>
+            <param name="filename">The filename to filter on. Use * to get all files.</param>
+            <param name="extension">The extension of the file. Use * to get all extensions.</param>
+            <param name="filenameOnly">True if you only want the filename, not the full path, returned.</param>
+            <param name="dateTime">The datetime to be evaluated against.</param>
+            <param name="fieldCondition">The file field and the condition to compare the DateTime to.</param>
+            <returns>The list of files that match these conditions.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RenameFiles(System.String[],System.String,OPSI.FileHandling.FilenameAddition)">
+            <summary>
+            Rename an array of filenames using the TextToAdd.
+            </summary>
+            <param name="oldFilenames">The array of old filenames.</param>
+            <param name="textToAdd">The TextToAdd to the filename.</param>
+            <param name="position">The position to add the TextToAdd</param>
+            <exception cref="T:System.NotSupportedException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.MoveASingleFile(System.String,System.String)">
+            <summary>
+            Move a single file.
+            </summary>
+            <param name="source">The source file name. Full paths should be used.</param>
+            <param name="destination">The destination file name. Full paths should be used.</param>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.CreateFilenameWithAppendedDateTime(System.String)">
+            <summary>
+            Create a file name with an appended datetime format.
+            Return the new filename.
+            </summary>
+            <param name="oldFilename">The old filename.</param>
+            <returns>Return the new filename.</returns>
+        </member>
+        <member name="M:OPSI.FileHandling.FileHandler.RemoveInvalidFilenameCharacters(System.String)">
+            <summary>
+            Remove invalid filename charactes from a filename.
+            </summary>
+            <param name="filename">The Filename.</param>
+            <returns>The filename without the characters.</returns>
+        </member>
+        <member name="P:OPSI.FileHandling.FileHandler.Files">
+            <summary>
+            List of filenames. Populated by calling GetFiles.
+            </summary>
+        </member>
+        <member name="P:OPSI.FileHandling.FileHandler.UseLogging">
+            <summary>
+            True to use logging.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:OPSI.FileHandling.FileHandler.AppendDateTimeToMovedFiles">
+            <summary>
+            True to append the datetime to the end of file names when moving files.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:OPSI.FileHandling.FileHandler.DateTimeFormat">
+            <summary>
+            The format to use when appending the date time to the end of file names, when moving files.
+            Default is " yyyyMMddHHmmss".
+            If the format provided here is invalid, the default value is used.
+            If the format contains invalid path characters they will be replaced with "".
+            </summary>
+        </member>
+    </members>
+</doc>

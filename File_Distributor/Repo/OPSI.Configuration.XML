@@ -1,0 +1,729 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OPSI.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:Configuration.ConfigurationCommunication">
+            <summary>
+            Class that handles the communication of the configuration settings or options.
+            Only one type of profile is supported per file, and each profile name
+            must be unique.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.#ctor(System.String,System.Type)">
+            <summary>
+            Default Constructor
+            </summary>
+            <param name="filename">The filename corresponding to the file where the settings are stored.</param>
+            <param name="profileType">The expected type of profile in the file.</param>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.#ctor(System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="profileType">The expected type of profile in the file.</param>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.LoadSettings">
+            <summary>
+            Called to load the in-memory settings file.
+            If the file is invalid, an exception will be thrown.
+            </summary>
+            <exception cref="T:Configuration.InvalidConfigurationFileException"></exception>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.SaveProfile(Configuration.ConfigurationProfile)">
+            <summary>
+            Save a profile to the file.
+            </summary>
+            <param name="SettingsProfile">The profile to save.</param>
+            <exception cref="T:Configuration.InvalidProfileNameException"></exception>
+            <exception cref="T:Configuration.InvalidProfileTypeException"></exception>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.GetProfile(System.String)">
+            <summary>
+            Get a profile from the file, based on the profile name.
+            The returned profile must be cast into the profile that
+            is expected.
+            </summary>
+            <param name="Profilename">The profile name</param>
+            <returns>The profile.</returns>
+            <exception cref="T:Configuration.InvalidProfileNameException"></exception>
+            <exception cref="T:Configuration.InvalidProfileTypeException"></exception>
+            <exception cref="T:Configuration.InvalidConfigurationFileException"></exception>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.GetAllProfileNames">
+            <summary>
+            Gets the names of the profiles in this file.
+            </summary>
+            <returns>A list of the names.</returns>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.SerializeFile(Configuration.ConfigurationFile)">
+            <summary>
+            Serialize the configuration file.
+            </summary>
+            <param name="newFile">The new configuration file.</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <exception cref="T:Configuration.InvalidProfileException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.NullReferenceException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.DeserializeFile">
+            <summary>
+            Deserilze the configuration file.
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+            <exception cref="T:System.IO.IOException"></exception>
+            <exception cref="T:System.NullReferenceException"></exception>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.UpdateProfileInformation">
+            <summary>
+            Updates the internal dictionary of the profiles.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.ResetProfileInformation">
+            <summary>
+            Reset the dictionary of profiles.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationCommunication.ClearSettingsCache">
+            <summary>
+            Clear the in-memory settings Cache.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.logger">
+            <summary>
+            Nlog logger.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.configurationFile">
+            <summary>
+            An in memory copy of the configuration file.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.profileSettings">
+            <summary>
+            A dictionary to keep track of the profiles.
+            The key is the profile name.
+            The value is the profile.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.filename">
+            <summary>
+            The filename of the configuration file.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.configurationProfileType">
+            <summary>
+            The type of profiles this file contains.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.throwExceptionOnInvalidFile">
+            <summary>
+            Throw an exception on an invalid settings file.
+            Default is true.
+            If false, a blank profile will be returned instead of an exception.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationCommunication.useLogging">
+            <summary>
+            True if you want to log messages.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationCommunication.Filename">
+            <summary>
+            The filename of the configuration file.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationCommunication.ConfigProfileType">
+            <summary>
+            The type of profiles this file contains.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationCommunication.ThrowExceptionOnInvalidFile">
+            <summary>
+            Throw an exception on an invalid settings file.
+            Default is true.
+            If false, a blank profile will be returned instead of an exception.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationCommunication.UseLogging">
+            <summary>
+            True if you want to log messages.
+            Default is false.
+            </summary>
+        </member>
+        <member name="T:Configuration.WebServiceSettings">
+            <summary>
+            Class to hold web service settings.
+            </summary>
+        </member>
+        <member name="M:Configuration.WebServiceSettings.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Configuration.WebServiceSettings.CreateProxySettingsIfNotCreated">
+            <summary>
+            Create the proxy settings if they are null.
+            If they are not null, they are unchanged.
+            </summary>
+        </member>
+        <member name="F:Configuration.WebServiceSettings.useProxy">
+            <summary>
+            True to use the proxy server settings.
+            False otherwise.
+            Default is false.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.URL">
+            <summary>
+            Web service URL.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.AuthenticationType">
+            <summary>
+            The Authetication Type for the web service.
+            Default value is "Basic".
+            See also <see cref="P:System.Net.IAuthenticationModule.AuthenticationType"/>.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.Username">
+            <summary>
+            Web service username.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.Password">
+            <summary>
+            Web service password.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.Timeout">
+            <summary>
+            The timeout (in seconds) for the web service calls.
+            Default is 30 seconds.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.TimeoutMilliseconds">
+            <summary>
+            The timeout (in milliseconds) for the web service calls.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.UseProxy">
+            <summary>
+            True to use the proxy settings for this webservice.
+            Default is false.
+            Also if the Proxy Settings are null, this property will always return false.
+            </summary>
+        </member>
+        <member name="P:Configuration.WebServiceSettings.ProxySettings">
+            <summary>
+            The proxy settings for this web service.
+            </summary>
+        </member>
+        <member name="T:Configuration.FTPSettings">
+            <summary>
+            Class to hold common FTP settings.
+            </summary>
+        </member>
+        <member name="M:Configuration.FTPSettings.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="F:Configuration.FTPSettings.site">
+            <summary>
+            FTP Site name
+            </summary>
+        </member>
+        <member name="F:Configuration.FTPSettings.username">
+            <summary>
+            FTP username.
+            </summary>
+        </member>
+        <member name="F:Configuration.FTPSettings.password">
+            <summary>
+            FTP password.
+            </summary>
+        </member>
+        <member name="P:Configuration.FTPSettings.Site">
+            <summary>
+            FTP Site
+            </summary>
+        </member>
+        <member name="P:Configuration.FTPSettings.Username">
+            <summary>
+            FTP username.
+            </summary>
+        </member>
+        <member name="P:Configuration.FTPSettings.Password">
+            <summary>
+            FTP password.
+            </summary>
+        </member>
+        <member name="T:Configuration.ProxySettings">
+            <summary>
+            Class to hold the proxy settings
+            </summary>
+        </member>
+        <member name="M:Configuration.ProxySettings.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Configuration.ProxySettings.Host">
+            <summary>
+            The proxy server host.
+            </summary>
+        </member>
+        <member name="P:Configuration.ProxySettings.AuthenticationType">
+            <summary>
+            The Authetication Type for the web service.
+            Default value is "Basic".
+            See also <see cref="P:System.Net.IAuthenticationModule.AuthenticationType"/>.
+            </summary>
+        </member>
+        <member name="P:Configuration.ProxySettings.Port">
+            <summary>
+            Proxy server port
+            Default value is 8080.
+            </summary>
+        </member>
+        <member name="P:Configuration.ProxySettings.Username">
+            <summary>
+            Proxy username.
+            </summary>
+        </member>
+        <member name="P:Configuration.ProxySettings.Password">
+            <summary>
+            Proxy password.
+            </summary>
+        </member>
+        <member name="T:Configuration.InvalidProfileNameException">
+            <summary>
+            The exception that is thrown when a profile name is invaild, ie when it is blank, null or not found in the file.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidProfileNameException.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileNameException"/> class.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidProfileNameException.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileNameException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+        </member>
+        <member name="M:Configuration.InvalidProfileNameException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileNameException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+            <param name="inner">The Inner Exception</param>
+        </member>
+        <member name="M:Configuration.InvalidProfileNameException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileNameException"/> class.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Configuration.InvalidProfileTypeException">
+            <summary>
+            The exception that is thrown when the profile type in the file does not match the expected profile type.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidProfileTypeException.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileTypeException"/> class.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidProfileTypeException.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileTypeException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+        </member>
+        <member name="M:Configuration.InvalidProfileTypeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileTypeException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+            <param name="inner">The Inner Exception</param>
+        </member>
+        <member name="M:Configuration.InvalidProfileTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileTypeException"/> class.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Configuration.InvalidProfileException">
+            <summary>
+            The exception that is thrown when the profile is invalid.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidProfileException.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileException"/> class.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidProfileException.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+        </member>
+        <member name="M:Configuration.InvalidProfileException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+            <param name="inner">The Inner Exception</param>
+        </member>
+        <member name="M:Configuration.InvalidProfileException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidProfileException"/> class.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Configuration.InvalidConfigurationFileException">
+            <summary>
+            The exception that is thrown when the configuration file is blank, has no profiles in it,
+            or when there is an error in the xml.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidConfigurationFileException.#ctor">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidConfigurationFileException"/> class.
+            </summary>
+        </member>
+        <member name="M:Configuration.InvalidConfigurationFileException.#ctor(System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidConfigurationFileException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+        </member>
+        <member name="M:Configuration.InvalidConfigurationFileException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidConfigurationFileException"/> class.
+            </summary>
+            <param name="message">The Exception Message</param>
+            <param name="inner">The Inner Exception</param>
+        </member>
+        <member name="M:Configuration.InvalidConfigurationFileException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Configuration.InvalidConfigurationFileException"/> class.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Configuration.ConfigurationProfile">
+            <summary>
+            Base class of all configuration profiles.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.#ctor">
+            <summary>
+            Default Constructor.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.Copy(Configuration.ConfigurationProfile)">
+            <summary>
+            Deep Copy a configuration profile using serialisation.
+            If the profile is null, null is returned.
+            </summary>
+            <param name="profile">the profile to copy.</param>
+            <example>How to use:
+            // DDConfigurationProfile must inherit off ConfigurationProfile
+            DDConfigurationProfile oldProfile = new DDConfigurationProfile();
+            DDConfigurationProfile Copy =
+            (DDConfigurationProfile)DDConfigurationProfile.Copy(oldProfile);
+            </example>
+            <returns>The Configuration Profile.</returns>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.CreateProfile(System.Type,System.String)">
+            <summary>
+            Create and return a configuration profile
+            </summary>
+            <param name="expectedType">The ExpectedType of the profile.</param>
+            <param name="profileXmlString">The Profile XML String.</param>
+            <example>How to use:
+            // DDConfigurationProfile must inherit off ConfigurationProfile
+            DDConfigurationProfile NewProfile = new DDConfigurationProfile();
+            DDConfigurationProfile Copy =
+            (DDConfigurationProfile)DDConfigurationProfile.CreateProfile(NewProfile.GetType(), NewProfile.ToString());
+            </example>
+            <returns>The Configuration Profile.</returns>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.ToString">
+            <summary>
+            Return the Profile Object as an
+            XML String.
+            If an error occurs, the return string is the exception message.
+            </summary>
+            <returns>The XML String of the Object.</returns>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.AfterLoad">
+            <summary>
+            This method is to be called just after the profile is loaded or created.
+            Override it if you want to do any complex processing on your profile.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.BeforeSave">
+            <summary>
+            This method is to be called just before the profile is saved.
+            Override it if you want to do any complex processing on your profile.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationProfile.profileName">
+            <summary>
+            The name of the profile.
+            This must be unique in the file.
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationProfile.fileName">
+            <summary>
+            The filename of this config profile
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationProfile.BuildExceptionMessage(System.String,System.Exception)">
+            <summary>
+            Build up a list of exception messages, going down the stack.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="e">The exception.</param>
+            <returns>The full error message, made up of all the exception messages.</returns>
+        </member>
+        <member name="P:Configuration.ConfigurationProfile.ProfileName">
+            <summary>
+            The name of the profile.
+            This must be unique in the file.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationProfile.Filename">
+            <summary>
+            The filename of this config profile
+            </summary>
+        </member>
+        <member name="T:Configuration.DatabaseSettings">
+            <summary>
+            Class which stores the settings for a single database.
+            </summary>
+        </member>
+        <member name="M:Configuration.DatabaseSettings.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Configuration.DatabaseSettings.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Overloaded Constructor
+            </summary>
+            <param name="Database"></param>
+            <param name="Server"></param>
+            <param name="Username"></param>
+            <param name="Password"></param>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.ConnectionString">
+            <summary>
+            A SQL connection string for this database object.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.EFConnectionString">
+            <summary>
+            A SQL connection string for this database object,
+            Use this for EF 4.0 entities.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.AreDatabaseSettingsValid">
+            <summary>
+            A check which can be used to ensure the database settings are valid.
+            Returns true if the server and database names are set, false otherwise.
+            Password and username are ignored.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.Database">
+            <summary>
+            Database name.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.Server">
+            <summary>
+            Server name.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.Username">
+            <summary>
+            Database username.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.Password">
+            <summary>
+            Database password.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.UseIntegratedSecurity">
+            <summary>
+            Use integrated security.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.ConnectTimeout">
+            <summary>
+            The Connect Time out.
+            </summary>
+        </member>
+        <member name="P:Configuration.DatabaseSettings.UseMultipleActiveResultSets">
+            <summary>
+            True to use Mulitple active result sets.
+            Especially important for EF and Lazy Loading.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="T:Configuration.ConfigurationProfileSerializer">
+            <summary>
+            Serializer class used to serialize and deserialize
+            the class <see cref="T:Configuration.ConfigurationProfile"/> and all derived types.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.#ctor(Configuration.ConfigurationProfile)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="profile">The Profile</param>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.op_Implicit(Configuration.ConfigurationProfile)~Configuration.ConfigurationProfileSerializer">
+            <summary>
+            Translates from a <see cref="T:Configuration.ConfigurationProfile"/> object
+            to a <see cref="T:Configuration.ConfigurationProfileSerializer"/> object.
+            </summary>
+            <param name="p">the profile</param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.op_Implicit(Configuration.ConfigurationProfileSerializer)~Configuration.ConfigurationProfile">
+            <summary>
+            Translates from a <see cref="T:Configuration.ConfigurationProfileSerializer"/> object
+            to a <see cref="T:Configuration.ConfigurationProfile"/> object.
+            </summary>
+            <param name="p">the profile serializer</param>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.GetSchema">
+            <summary>
+            Returns null always as this object has no pre-defined schema.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Reads the raw XML.
+            </summary>
+            <param name="reader">The XMLReader that reads the XML.</param>
+        </member>
+        <member name="M:Configuration.ConfigurationProfileSerializer.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the XML
+            </summary>
+            <param name="writer">The XMLWriter that writes the XML.</param>
+        </member>
+        <member name="F:Configuration.ConfigurationProfileSerializer.profile">
+            <summary>
+            The profile of this object.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationProfileSerializer.Profile">
+            <summary>
+            The profile of this object.
+            </summary>
+        </member>
+        <member name="T:Configuration.SMTPSettings">
+            <summary>
+            Class which stores the settings for an SMTP Host.
+            </summary>
+        </member>
+        <member name="M:Configuration.SMTPSettings.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Configuration.SMTPSettings.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="host">The SMTP Host.</param>
+            <param name="port">The Port Number.</param>
+            <param name="username">The SMTP Username.</param>
+            <param name="password">The SMPT Password.</param>
+        </member>
+        <member name="F:Configuration.SMTPSettings.host">
+            <summary>
+            SMTP Host Name.
+            </summary>
+        </member>
+        <member name="F:Configuration.SMTPSettings.port">
+            <summary>
+            The Port. Default is 25.
+            </summary>
+        </member>
+        <member name="F:Configuration.SMTPSettings.username">
+            <summary>
+            SMTP username.
+            </summary>
+        </member>
+        <member name="F:Configuration.SMTPSettings.password">
+            <summary>
+            SMTP password.
+            </summary>
+        </member>
+        <member name="P:Configuration.SMTPSettings.Host">
+            <summary>
+            SMTP Host Name.
+            </summary>
+        </member>
+        <member name="P:Configuration.SMTPSettings.Port">
+            <summary>
+            The Port. Default is 25.
+            </summary>
+        </member>
+        <member name="P:Configuration.SMTPSettings.Username">
+            <summary>
+            SMTP username.
+            </summary>
+        </member>
+        <member name="P:Configuration.SMTPSettings.Password">
+            <summary>
+            SMTP password.
+            </summary>
+        </member>
+        <member name="T:Configuration.ConfigurationFile">
+            <summary>
+            Class that contains an in memory list of profiles
+            from a file.
+            </summary>
+        </member>
+        <member name="M:Configuration.ConfigurationFile.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="F:Configuration.ConfigurationFile.settings">
+            <summary>
+            A list of profile specific settings.
+            </summary>
+        </member>
+        <member name="P:Configuration.ConfigurationFile.Settings">
+            <summary>
+            A list of profile specific settings.
+            </summary>
+        </member>
+    </members>
+</doc>
